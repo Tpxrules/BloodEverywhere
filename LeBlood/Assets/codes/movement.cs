@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+
+    public Transform pls;
+    public GameObject BulletPrefab;
+
+    public float bulletForce ;
+
+
+
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(pls.up * bulletForce );
+    }
+
     Rigidbody2D body;
 
-    float horizontal;
-    float vertical;
+    public float horizontal;
+    public float vertical;
     float moveLimiter = 0.7f;
 
     public float runSpeed = 20.0f;
@@ -22,6 +37,10 @@ public class movement : MonoBehaviour
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
     }
 
     void FixedUpdate()
