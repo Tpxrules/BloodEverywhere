@@ -20,6 +20,9 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if( collision.gameObject.tag != "player")
+        if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
+            enemyComponent.TakeDamamge(1);
+        }
         Destroy(gameObject);
     }
 
