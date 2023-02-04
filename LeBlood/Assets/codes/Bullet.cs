@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public void Start()
     {
         Invoke("Destroy", 3);
+        
+        
     }
 
     void Destroy()

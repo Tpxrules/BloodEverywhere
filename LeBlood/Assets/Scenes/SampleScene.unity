@@ -379,7 +379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pls: {fileID: 1003336648}
   BulletPrefab: {fileID: 1725837270759254984, guid: 8c7bcd1e6392288499338e76a29d2242, type: 3}
-  bulletForce: 20
+  bulletForce: 400
+  horizontal: 0
+  vertical: 0
   runSpeed: 5
 --- !u!50 &284199904
 Rigidbody2D:
