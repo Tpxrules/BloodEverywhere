@@ -22,6 +22,10 @@ public class movement : MonoBehaviour
         public int maxstamina = 5; // maximum stamina of the player
         public int currentstamina; // current stamina of the player
         public float bulletForce ;
+
+        public bool held = false;
+        public float shootingrate = 0.2f;
+        public float lastshot;
   
      void melee()
     {
@@ -62,6 +66,18 @@ public class movement : MonoBehaviour
 
     void Update()
     {
+       
+
+      
+
+    if (Input.GetButtonDown("Fire1") && held ==false)
+    held = true;
+      if (Input.GetButtonUp("Fire1") && held ==true)
+    held = false;
+
+
+     
+         lastshot += Time.deltaTime;
          timesincelastrecover += Time.deltaTime;
         if (timesincelastrecover > StaminaRate ){
                 timesincelastrecover = 0;
@@ -73,8 +89,9 @@ public class movement : MonoBehaviour
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
-        if (Input.GetButtonDown("Fire1"))
+        if (held ==true && currentHealth > 1 && lastshot > shootingrate)
         {
+            lastshot = 0;
             Shoot();
         }
           if (Input.GetButtonDown("Fire2") && currentstamina == 5)
