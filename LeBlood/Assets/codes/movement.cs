@@ -5,21 +5,25 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
 
+    Rigidbody2D body;
     public Transform pls;
     public GameObject BulletPrefab;
-     public GameObject meleePrefab;
-     public int maxHealth = 100; // maximum health of the player
-    public int currentHealth; // current health of the player
-    public HealthBar healthBar;
-
-
-    public float bulletForce ;
-
-
-
+    public GameObject meleePrefab;
+    public float horizontal;
+    public float vertical;
+    float moveLimiter = 0.7f;
+    public float runSpeed = 20.0f;
+        public int maxHealth = 100; // maximum health of the player
+        public int currentHealth; // current health of the player
+        public HealthBar healthBar;
+        public float StaminaRate = 0.2f;
+        private float timesincelastrecover;
+        public HealthBar stamina;
+        public int maxstamina = 5; // maximum stamina of the player
+        public int currentstamina; // current stamina of the player
+        public float bulletForce ;
     void Shoot()
     {
-
         GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
@@ -27,22 +31,14 @@ public class movement : MonoBehaviour
      void melee()
     {
          GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
-     
     }
-
-    Rigidbody2D body;
-
-    public float horizontal;
-    public float vertical;
-    float moveLimiter = 0.7f;
-
-    public float runSpeed = 20.0f;
-
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        currentstamina = maxstamina;
+                healthBar.SetMaxHealth(maxHealth);
+                stamina.SetMaxHealth(maxstamina);    
     }
     public void TakeDamage(int damage)
     {
@@ -63,6 +59,14 @@ public class movement : MonoBehaviour
 
     void Update()
     {
+         timesincelastrecover += Time.deltaTime;
+        if (timesincelastrecover > StaminaRate ){
+                timesincelastrecover = 0;
+                if(  currentstamina < maxstamina){
+                     currentstamina++;
+                     stamina.SetHealth(currentstamina);                     
+                }                      
+        } 
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
@@ -70,8 +74,10 @@ public class movement : MonoBehaviour
         {
             Shoot();
         }
-          if (Input.GetButtonDown("Fire2"))
+          if (Input.GetButtonDown("Fire2") && currentstamina == 5)
         {
+          currentstamina = 0;
+            stamina.SetHealth(currentstamina);
             melee();
         }
     }

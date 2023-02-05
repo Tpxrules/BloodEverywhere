@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-      private Transform target;
+   public GameObject blood;
+
+
+
+    private Transform target;
     public void Start()
     {
         Invoke("Destroy", 1);
@@ -27,9 +31,9 @@ public class Hand : MonoBehaviour
     {
         if( collision.gameObject.tag != "player" ){
 
-
+                 
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
-
+                       GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
                          enemyComponent.TakeDamamge(3);
 
                   }

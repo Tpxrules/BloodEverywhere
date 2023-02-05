@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9190939807468205028}
   - component: {fileID: 6112727290207187425}
   m_Layer: 0
-  m_Name: blood 1
+  m_Name: blood 2
   m_TagString: Bonk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2413101681620709630}
   serializedVersion: 8
-  lengthInSec: 0.1
+  lengthInSec: 0.05
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -129,7 +129,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -305,7 +305,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.4594593
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -313,8 +313,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.72402954
-          value: 0
+          time: 0.9673462
+          value: 0.98648834
           inSlope: 0
           outSlope: 0
           tangentMode: 0
