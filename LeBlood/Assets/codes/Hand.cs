@@ -30,7 +30,7 @@ public class Hand : MonoBehaviour
 
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
 
-                         enemyComponent.TakeDamamge(1);
+                         enemyComponent.TakeDamamge(3);
 
                   }
            Destroy(gameObject);

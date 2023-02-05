@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class MelleAttack : MonoBehaviour
 {
-      public int damage = 10;
+    public int damage = 10;
     public float attackInterval = 1.0f;
     public float attackRange = 3.0f;
     private float timeSinceLastAttack;
-    private PlayerHealth playerHealth;
+    private movement a;
     private Transform playerTransform;
 
     void Start()
     {
-        playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
-        playerTransform = playerHealth.transform;
+        a = GameObject.FindWithTag("Player").GetComponent<movement>();
+        playerTransform = a.transform;
         timeSinceLastAttack = attackInterval;
     }
 
@@ -35,6 +35,6 @@ public class MelleAttack : MonoBehaviour
     void Attack()
     {
         timeSinceLastAttack = 0.0f;
-        playerHealth.TakeDamage(damage);
+        a.TakeDamage(damage);
     }
 }

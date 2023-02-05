@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -148}
-  m_SizeDelta: {x: 244.5336, y: 73.2872}
+  m_AnchoredPosition: {x: 139, y: -31.765}
+  m_SizeDelta: {x: 244.5336, y: 36.8173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &44903984
 MonoBehaviour:
@@ -448,7 +448,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &284199907
 BoxCollider2D:
   m_ObjectHideFlags: 0
