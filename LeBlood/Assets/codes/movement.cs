@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-
+    public Animator animator;
     Rigidbody2D body;
     public Transform pls;
     public GameObject BulletPrefab;
@@ -93,7 +93,8 @@ public class movement : MonoBehaviour
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
-
+        animator.SetFloat("HS", horizontal);
+        animator.SetFloat("VS" , vertical);
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 }
