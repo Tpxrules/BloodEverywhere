@@ -7,6 +7,7 @@ public class movement : MonoBehaviour
 
     public Transform pls;
     public GameObject BulletPrefab;
+     public GameObject meleePrefab;
 
     public float bulletForce ;
 
@@ -14,9 +15,15 @@ public class movement : MonoBehaviour
 
     void Shoot()
     {
+
         GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
+    }
+     void melee()
+    {
+         GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
+     
     }
 
     Rigidbody2D body;
@@ -40,6 +47,10 @@ public class movement : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+          if (Input.GetButtonDown("Fire2"))
+        {
+            melee();
         }
     }
 
