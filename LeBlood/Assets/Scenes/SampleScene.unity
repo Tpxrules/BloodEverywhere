@@ -515,6 +515,9 @@ MonoBehaviour:
   maxstamina: 5
   currentstamina: 0
   bulletForce: 400
+  held: 0
+  shootingrate: 1.5
+  lastshot: 0
 --- !u!50 &284199904
 Rigidbody2D:
   serializedVersion: 4

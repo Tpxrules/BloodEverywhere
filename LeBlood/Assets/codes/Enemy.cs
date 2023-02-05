@@ -9,6 +9,12 @@ public class Enemy : MonoBehaviour
     private float distance;
     public bool ranger;
     public float range;
+      public GameObject a;
+      public GameObject b;
+      public GameObject c;
+      public GameObject d;
+      public GameObject e;
+      public GameObject f;
     [SerializeField] float health, maxHealth = 3f;
 
     private void Start(){
@@ -19,6 +25,33 @@ public class Enemy : MonoBehaviour
     public void TakeDamamge(float damageAmount){
         health -=damageAmount;
         if(health<=0){
+                //spawning le funny blood
+                int number;
+                number =Random.Range(1,6);
+                switch(number){
+                    case 1:
+                      GameObject blood1 = Instantiate(a, transform.position, transform.rotation);
+                    break;
+                    case 2:
+                        GameObject blood2 = Instantiate(b, transform.position, transform.rotation);
+                    break;
+                    case 3:
+                        GameObject blood3 = Instantiate(c, transform.position, transform.rotation);
+                    break;
+                    case 4:
+                        GameObject blood4 = Instantiate(d, transform.position, transform.rotation);
+                    break;
+                    case 5:
+                        GameObject blood5 = Instantiate(e, transform.position, transform.rotation);
+                    break;
+                    case 6:
+                         GameObject blood6 = Instantiate(f, transform.position, transform.rotation);
+                    break;
+                }
+                
+
+
+
             Destroy(gameObject);
         }
     }
