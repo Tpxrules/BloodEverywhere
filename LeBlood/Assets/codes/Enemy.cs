@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject player;
+    private Transform target;
     public float speed;
     private float distance;
     public bool ranger;
+    public float range;
     [SerializeField] float health, maxHealth = 3f;
 
     private void Start(){
         health = maxHealth;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     public void TakeDamamge(float damageAmount){
@@ -22,18 +24,18 @@ public class Enemy : MonoBehaviour
     }
 
      public void Update() {
-        distance = Vector2.Distance(transform.position,player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
+        distance = Vector2.Distance(transform.position,target.transform.position);
+        Vector2 direction = target.transform.position - transform.position;
          
        
          if(ranger){
 
-                if(distance>4)
-                     transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+                if(distance>range)
+                     transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
                 
 
          }else
-                    transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
          
     }
 }
