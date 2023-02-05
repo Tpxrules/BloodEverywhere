@@ -22,15 +22,12 @@ public class movement : MonoBehaviour
         public int maxstamina = 5; // maximum stamina of the player
         public int currentstamina; // current stamina of the player
         public float bulletForce ;
-    void Shoot()
-    {
-        GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(pls.up * bulletForce );
-    }
+  
      void melee()
     {
          GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
+           currentHealth = maxHealth;
+            healthBar.SetHealth(currentHealth);
     }
     void Start()
     {
@@ -50,7 +47,13 @@ public class movement : MonoBehaviour
             Die();
         }
     }
-
+  void Shoot()
+    {
+        GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(pls.up * bulletForce );
+        TakeDamage(1);
+    }
     private void Die()
     {
         // do death related actions here, such as calling a game over screen

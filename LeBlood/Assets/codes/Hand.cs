@@ -5,22 +5,32 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
    public GameObject blood;
+      public GameObject bloodrecieve;
 
 
 
     private Transform target;
+
+
+   
+
     public void Start()
     {
         Invoke("Destroy", 1);
-           
-        target = GameObject.FindGameObjectWithTag("Hand").GetComponent<Transform>();
         
+      
+        target = GameObject.FindGameObjectWithTag("Hand").GetComponent<Transform>();
+         spark();
     }
 
 
     void Update(){
            transform.position = target.transform.position;
              transform.rotation = target.transform.rotation;
+    }
+  
+    void spark(){
+ GameObject splich = Instantiate(bloodrecieve, transform.position, transform.rotation);
     }
     void Destroy()
     {
