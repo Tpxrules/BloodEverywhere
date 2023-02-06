@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    public Animator animator;
    public GameObject blood;
       public GameObject bloodrecieve;
-
+    public Quaternion silly;
 
 
     private Transform target;
@@ -25,8 +26,9 @@ public class Hand : MonoBehaviour
 
 
     void Update(){
+        silly =   Quaternion.Euler( target.transform.rotation.x,  target.transform.rotation.y,  target.transform.rotation.z-90);
            transform.position = target.transform.position;
-             transform.rotation = target.transform.rotation;
+             transform.rotation = silly;
     }
   
     void spark(){

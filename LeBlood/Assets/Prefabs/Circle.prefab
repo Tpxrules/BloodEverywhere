@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2121066969505848378}
   - component: {fileID: 2121066969505848379}
   - component: {fileID: 4850021000730176067}
+  - component: {fileID: 1914539238337054401}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Bink
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -1142533520, guid: 776fde2ba3126db41b010237f21561fb, type: 3}
   m_Color: {r: 1, g: 0, b: 0.9057007, a: 0.36862746}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,5 +125,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33453a10578cbf45865e2f1e8c6e956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1914539238337054401}
   blood: {fileID: 2413101681620709630, guid: 8081d2fa75358aa4da6505c514329823, type: 3}
   bloodrecieve: {fileID: 2413101681620709630, guid: d022707450d7c9e42b945c42fbfe7a63, type: 3}
+  silly: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &1914539238337054401
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121066969505848376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56feeb56a5c3eb847b89aa274c5ecab7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
