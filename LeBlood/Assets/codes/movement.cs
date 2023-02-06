@@ -27,6 +27,9 @@ public class movement : MonoBehaviour
         public float shootingrate = 0.2f;
         public float lastshot;
   
+        //implementing Dashing.
+        public float dashforce = 1;
+
      void melee()
     {
          GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
@@ -35,6 +38,7 @@ public class movement : MonoBehaviour
     }
     void Start()
     {
+         gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         currentstamina = maxstamina;
@@ -67,8 +71,15 @@ public class movement : MonoBehaviour
     void Update()
     {
        
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
-      
+        difference.Normalize();
+        
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        float xcomponent = Mathf.Cos(rotationZ * Mathf.PI / 180) * dashforce;
+        float ycomponent = Mathf.Sin(rotationZ * Mathf.PI / 180) * dashforce;
+
+        Vector3 dashermeter = new Vector3(xcomponent, ycomponent, 0f )/2;
 
     if (Input.GetButtonDown("Fire1") && held ==false)
     held = true;
@@ -82,6 +93,7 @@ public class movement : MonoBehaviour
         if (timesincelastrecover > StaminaRate ){
                 timesincelastrecover = 0;
                 if(  currentstamina < maxstamina){
+                     gameObject.GetComponent<TrailRenderer>().enabled=false; 
                      currentstamina++;
                      stamina.SetHealth(currentstamina);                     
                 }                      
@@ -99,6 +111,17 @@ public class movement : MonoBehaviour
           currentstamina = 0;
             stamina.SetHealth(currentstamina);
             melee();
+
+      
+        }
+          if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina > 2)
+        {
+             gameObject.GetComponent<TrailRenderer>().enabled=true; 
+             TakeDamage(2);
+             currentstamina = currentstamina-2;
+              stamina.SetHealth(currentstamina);
+         body.velocity=new Vector2(0,0);
+           body.AddForce( dashermeter);
         }
     }
 
