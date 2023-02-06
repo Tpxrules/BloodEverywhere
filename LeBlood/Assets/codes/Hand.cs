@@ -17,31 +17,37 @@ public class Hand : MonoBehaviour
 
     public void Start()
     {
-        Invoke("Destroy", 1);
+        Invoke("enabler", 1);
         
       
         target = GameObject.FindGameObjectWithTag("Hand").GetComponent<Transform>();
+       
          spark();
+           gameObject.GetComponent<BoxCollider2D>().enabled=false; 
     }
 
 
     void Update(){
         silly =   Quaternion.Euler( target.transform.rotation.x,  target.transform.rotation.y,  target.transform.rotation.z-90);
-           transform.position = target.transform.position;
+        
              transform.rotation = silly;
     }
   
     void spark(){
  GameObject splich = Instantiate(bloodrecieve, transform.position, transform.rotation);
     }
+    void enabler(){
+       gameObject.GetComponent<BoxCollider2D>().enabled=true; 
+    }
     void Destroy()
     {
-        Destroy(gameObject);
+        
+     Destroy(gameObject);
     }
 
-  void OnCollisionEnter2D(Collision2D collision)
+  void OnTriggerEnter2D(Collider2D collision)
     {
-        if( collision.gameObject.tag != "player" ){
+        if( collision.gameObject.tag != "Player" ){
 
                  
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){

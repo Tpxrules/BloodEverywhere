@@ -106,19 +106,20 @@ public class movement : MonoBehaviour
             lastshot = 0;
             Shoot();
         }
-          if (Input.GetButtonDown("Fire2") && currentstamina == 5)
+          if (Input.GetButtonDown("Fire2") && currentstamina > 2)
         {
-          currentstamina = 0;
+          currentstamina = currentstamina-3;
             stamina.SetHealth(currentstamina);
             melee();
 
       
         }
-          if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina > 2)
+          if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina == 5)
         {
+             GameObject melee = Instantiate(meleePrefab, transform.position ,pls.rotation);
              gameObject.GetComponent<TrailRenderer>().enabled=true; 
              TakeDamage(2);
-             currentstamina = currentstamina-2;
+             currentstamina = 0;
               stamina.SetHealth(currentstamina);
          body.velocity=new Vector2(0,0);
            body.AddForce( dashermeter);
