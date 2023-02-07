@@ -41,8 +41,8 @@ public class movement : MonoBehaviour
         public int attacktype;
 //-
 
-private float stuntime = 1;
-private float timestunned;
+private float stuntime = 0.5f;
+private float timestunned = 2;
 
     public void stun(){
       timestunned = 0;

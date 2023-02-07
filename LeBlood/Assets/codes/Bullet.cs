@@ -24,8 +24,11 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if( collision.gameObject.tag != "player" ){
-
-
+                Rigidbody2D a = collision.gameObject.GetComponent<Rigidbody2D>();
+                Vector3 difference = collision.transform.position - transform.position;
+                difference.Normalize();
+                collision.transform.position = collision.transform.position + difference/2;
+              
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
 
                          enemyComponent.TakeDamamge(amountofdamage);
