@@ -19,7 +19,7 @@ public class movement : MonoBehaviour
         public newhealthbar healthBar;
         public float StaminaRate = 0.2f;
         private float timesincelastrecover;
-        public HealthBar stamina;
+        public newhealthbar stamina;
         public int maxstamina = 5; // maximum stamina of the player
         public int currentstamina; // current stamina of the player
         public float bulletForce ;
