@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class movement : MonoBehaviour
 {
   public GameObject bloop;
@@ -77,7 +79,9 @@ public class movement : MonoBehaviour
     private void Die()
     {
         // do death related actions here, such as calling a game over screen
-        Destroy(gameObject);
+       
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
+      //  Destroy(gameObject);
     }
 
     void Update()
