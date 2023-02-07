@@ -33,6 +33,15 @@ public class movement : MonoBehaviour
         float timer;
         private bool dash;
 
+
+
+    public void recoverxp(){
+          if(  currentstamina < maxstamina){
+                    
+                     currentstamina++;
+                     stamina.SetHealth(currentstamina);                     
+                }                      
+    }
      void melee()
     {
          GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
@@ -104,11 +113,7 @@ public class movement : MonoBehaviour
          timesincelastrecover += Time.deltaTime;
         if (timesincelastrecover > StaminaRate ){
                 timesincelastrecover = 0;
-                if(  currentstamina < maxstamina){
-                    
-                     currentstamina++;
-                     stamina.SetHealth(currentstamina);                     
-                }                      
+            recoverxp();
         } 
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left

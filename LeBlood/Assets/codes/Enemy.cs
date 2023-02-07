@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
       public GameObject d;
       public GameObject e;
       public GameObject f;
+        public GameObject xporb;
     [SerializeField] float health, maxHealth = 3f;
 
     private void Start(){
@@ -50,8 +51,8 @@ public class Enemy : MonoBehaviour
                 }
                 
 
-
-
+            
+             GameObject xp = Instantiate(xporb, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
