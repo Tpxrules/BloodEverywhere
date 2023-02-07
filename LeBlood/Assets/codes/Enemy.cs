@@ -60,7 +60,12 @@ public class Enemy : MonoBehaviour
      public void Update() {
         distance = Vector2.Distance(transform.position,target.transform.position);
         Vector2 direction = target.transform.position - transform.position;
-         
+
+        if(direction.x > 1){
+            transform.localScale  = new Vector3(1,1,1);
+        }
+         else
+          transform.localScale  = new Vector3(-1,1,1);
        
          if(ranger){
 
