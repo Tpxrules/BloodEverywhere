@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MelleAttack : MonoBehaviour
 {
-    public int damage = 2;
+    public int damage = 6;
     public float attackInterval = 1.0f;
     public float attackRange = 3.0f;
     private float timeSinceLastAttack;
