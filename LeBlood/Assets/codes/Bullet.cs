@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
+
+    public int amountofdamage = 1;
         public GameObject blood;
     public void Start()
     {
         Invoke("Destroy", 3);
     }
 
+        public void leset(int x){
+            amountofdamage = x;
+        }
     void Destroy()
     {
         Destroy(gameObject);
@@ -23,7 +28,7 @@ public class Bullet : MonoBehaviour
 
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
 
-                         enemyComponent.TakeDamamge(1);
+                         enemyComponent.TakeDamamge(amountofdamage);
 
                   }
                   
