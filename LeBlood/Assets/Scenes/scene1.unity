@@ -14751,9 +14751,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b61ff664c40de4ca87453b9f2b2eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawntime: 4
-  a: {fileID: 8315981416090784648, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
-  b: {fileID: 8423041051047232847, guid: 7c41d03da47a36440b0471be2d117e89, type: 3}
+  spawntime: 2
+  teddy1: {fileID: 8315981416090784648, guid: df20530cba3667f4bb14f5bdb1719654, type: 3}
+  teddy2: {fileID: 4272524200492783375, guid: 14bdd603fe2ff804c88e0ce01c6abfa1, type: 3}
+  slime: {fileID: 8423041051047232847, guid: 7c41d03da47a36440b0471be2d117e89, type: 3}
+  b: {fileID: 2009810116681836086, guid: 1149a9a69d7d5d548927e785c2b6ca0a, type: 3}
 --- !u!4 &1863779417
 Transform:
   m_ObjectHideFlags: 0
