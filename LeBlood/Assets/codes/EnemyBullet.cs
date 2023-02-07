@@ -13,6 +13,7 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+           Invoke("Destroy", 3);
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -23,18 +24,19 @@ public class EnemyBullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
-    void Update()
-    {
-        timer += Time.deltaTime;
+  
 
-        if (timer > 10)
-        {
-            Destroy(gameObject);
-        }
+   void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        other.gameObject.GetComponent<movement>().TakeDamage(damage);
-        Destroy(gameObject);
+       if( other.gameObject.tag == "Player" ){
+        player.gameObject.GetComponent<movement>().TakeDamage(damage);
+          Destroy(gameObject);
+       }
+       
+      
     }
 }
