@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+  public GameObject bloop;
     public Animator animator;
     Rigidbody2D body;
     public Transform pls;
@@ -29,6 +30,8 @@ public class movement : MonoBehaviour
   
         //implementing Dashing.
         public float dashforce = 1;
+        float timer;
+        private bool dash;
 
      void melee()
     {
@@ -71,7 +74,15 @@ public class movement : MonoBehaviour
     void Update()
     {
       
-       
+         timer += Time.deltaTime;
+
+        if (timer > 1 && dash==true)
+        {
+          dash = false;
+           GameObject blap = Instantiate(bloop, transform.position, transform.rotation);
+           gameObject.GetComponent<TrailRenderer>().enabled=false; 
+           gameObject.GetComponent<Collider2D>().enabled=true; 
+        }
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         difference.Normalize();
@@ -94,7 +105,7 @@ public class movement : MonoBehaviour
         if (timesincelastrecover > StaminaRate ){
                 timesincelastrecover = 0;
                 if(  currentstamina < maxstamina){
-                     gameObject.GetComponent<TrailRenderer>().enabled=false; 
+                    
                      currentstamina++;
                      stamina.SetHealth(currentstamina);                     
                 }                      
@@ -117,13 +128,16 @@ public class movement : MonoBehaviour
         }
           if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina == 5)
         {
+          timer = 0;
+          dash = true;
              GameObject melee = Instantiate(meleePrefab, transform.position ,pls.rotation);
              gameObject.GetComponent<TrailRenderer>().enabled=true; 
+            gameObject.GetComponent<Collider2D>().enabled=false; 
              TakeDamage(2);
              currentstamina = 0;
               stamina.SetHealth(currentstamina);
-         body.velocity=new Vector2(0,0);
-           body.AddForce( dashermeter);
+               body.velocity=new Vector2(0,0);
+                body.AddForce( dashermeter);
         }
     }
 

@@ -9,7 +9,7 @@ public class EnemyBullet : MonoBehaviour
     public float force;
     private float timer;
     public int damage;
-
+     public GameObject blood;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +33,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
        if( other.gameObject.tag == "Player" ){
+         GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
         player.gameObject.GetComponent<movement>().TakeDamage(damage);
           Destroy(gameObject);
        }

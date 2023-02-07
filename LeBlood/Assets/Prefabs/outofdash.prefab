@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9190939807468205028}
   - component: {fileID: 6112727290207187425}
   m_Layer: 0
-  m_Name: blood 2
+  m_Name: outofdash
   m_TagString: Bonk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2413101681620709630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.22, y: 5.39, z: 0.012172969}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,7 +129,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -182,7 +182,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 13
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -305,7 +305,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.44594574
+          value: 0.18919373
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -313,7 +313,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.38995677
+          time: 0.40208435
           value: 0
           inSlope: 0
           outSlope: 0
