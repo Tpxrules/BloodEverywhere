@@ -16,7 +16,7 @@ public class movement : MonoBehaviour
     public float runSpeed = 20.0f;
         public int maxHealth = 100; // maximum health of the player
         public int currentHealth; // current health of the player
-        public HealthBar healthBar;
+        public newhealthbar healthBar;
         public float StaminaRate = 0.2f;
         private float timesincelastrecover;
         public HealthBar stamina;
