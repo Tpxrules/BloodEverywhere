@@ -16,7 +16,9 @@ public class movement : MonoBehaviour
     public GameObject meleePrefab;
     public float horizontal;
     public float vertical;
+    public bool isInvincible = false;
     float moveLimiter = 0.7f;
+    private movement stats;
     public float runSpeed = 20.0f;
         public int maxHealth = 100; // maximum health of the player
         public int currentHealth; // current health of the player
@@ -60,8 +62,10 @@ private float timestunned = 2;
            currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
     }
+    
     void Start()
     {
+        stats = GetComponent<movement>();
          gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
@@ -69,7 +73,11 @@ private float timestunned = 2;
                 healthBar.SetMaxHealth(maxHealth);
                 stamina.SetMaxHealth(maxstamina);    
     }
-    public void TakeDamage(int damage)
+
+
+ public void TakeDamage(int damage)
+{
+    if (!stats.isInvincible)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -79,6 +87,15 @@ private float timestunned = 2;
             Die();
         }
     }
+    else
+    {
+        // Player is invincible, so don't take damage
+        damage = 0;
+    }
+}
+
+
+
   void Shoot()
     {
       
