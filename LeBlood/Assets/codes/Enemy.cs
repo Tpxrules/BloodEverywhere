@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
       public GameObject e;
       public GameObject f;
         public GameObject xporb;
+        public bool ignited;
+        public bool exploder;
     [SerializeField] float health, maxHealth = 3f;
 
     private void Start(){
@@ -73,6 +75,13 @@ public class Enemy : MonoBehaviour
                      transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
                 
 
+         }else if(exploder){
+                 if(distance>range  && ignited == false){
+                     transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
+                
+                }else{
+                    ignited = true;
+                }
          }else
                     transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
          
