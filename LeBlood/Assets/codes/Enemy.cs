@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private float distance;
     public bool ranger;
     public float range;
+    public GameObject floatingMessagePrefab;
       public GameObject a;
       public GameObject b;
       public GameObject c;
@@ -27,6 +28,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamamge(float damageAmount){
         health -=damageAmount;
+        if (damageAmount > 0) {
+            GameObject floatingMessage = Instantiate(floatingMessagePrefab, transform.position, Quaternion.identity);
+            floatingMessage.GetComponent<FloatingMessage>().SetMessage(damageAmount.ToString());
+        }
         if(health<=0){
                 //spawning le funny blood
                 int number;

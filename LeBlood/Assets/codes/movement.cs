@@ -77,22 +77,17 @@ private float timestunned = 2;
 
  public void TakeDamage(int damage)
 {
-    if (!stats.isInvincible)
-    {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         // check if player is dead
         if (currentHealth <= 0)
         {
             Die();
+            return;
         }
-    }
-    else
-    {
-        // Player is invincible, so don't take damage
-        damage = 0;
-    }
+
 }
+
 
 
 

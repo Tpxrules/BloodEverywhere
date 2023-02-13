@@ -130,6 +130,7 @@ MonoBehaviour:
   speed: 3
   ranger: 0
   range: 0
+  floatingMessagePrefab: {fileID: 4640475883573808464, guid: 78476cbc04040b0499b5ab1486f9d37d, type: 3}
   a: {fileID: 494918567293345715, guid: 9611005e43618a24d829dd6dd6b6506d, type: 3}
   b: {fileID: 6802029522940051345, guid: d8e197427094bf84da42b1893dce300a, type: 3}
   c: {fileID: 6003334097060481089, guid: 5fad84a67f44b464897293178d8c27ce, type: 3}
@@ -137,6 +138,8 @@ MonoBehaviour:
   e: {fileID: 6568640083813801920, guid: 2d18f0e3a732fcb41b418d1df56928e7, type: 3}
   f: {fileID: 6760900238239569666, guid: 9ee2613243651c245853c3e5986bf9f3, type: 3}
   xporb: {fileID: 8315981416090784648, guid: b3a9caa9a36e6ed4f871f35e841df7c0, type: 3}
+  ignited: 0
+  exploder: 0
   health: 0
   maxHealth: 3
 --- !u!50 &5471474309503895500
