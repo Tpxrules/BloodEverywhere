@@ -9,6 +9,7 @@ public class movement : MonoBehaviour
 
 //-
   public GameObject bloop;
+  public bool magnet = false;
     public Animator animator;
     Rigidbody2D body;
     public Transform pls;

@@ -23,7 +23,7 @@ public class xpscript : MonoBehaviour
      public void Update() {
         distance = Vector2.Distance(transform.position,target.transform.position);
         Vector2 direction = target.transform.position - transform.position;
-         
+                  if(distance<3 || a.magnet == true) 
                      transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
 
          
