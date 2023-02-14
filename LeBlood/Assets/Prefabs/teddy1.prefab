@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   ranger: 0
-  range: 0
+  range: 1
   floatingMessagePrefab: {fileID: 4640475883573808464, guid: 78476cbc04040b0499b5ab1486f9d37d, type: 3}
   a: {fileID: 494918567293345715, guid: 9611005e43618a24d829dd6dd6b6506d, type: 3}
   b: {fileID: 6802029522940051345, guid: d8e197427094bf84da42b1893dce300a, type: 3}

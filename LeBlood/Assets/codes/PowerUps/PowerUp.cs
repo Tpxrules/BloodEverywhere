@@ -6,23 +6,34 @@ public class PowerUp : MonoBehaviour
     public GameObject PickUpEffect;
     public float duration = 4f;
     public HealthManager healthManager;
+    public bool speed = false;
     public SpeedUp speedUp;
+     public bool invin = false;
     public Invincibility isInvincible;
-
+     public bool maaag = false;
+    public MangetCode magneeto;
     private movement stats;
-
+    
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))
         {
             stats = other.GetComponent<movement>();
-            StartCoroutine(Pickup());
+            StartCoroutine(gone());
+
+            if(speed)
             StartCoroutine(speedUp.Pickup(stats));
+            if(invin)
             StartCoroutine(isInvincible.Pickup(stats));
+            if(maaag){
+                StartCoroutine(gone());
+                    StartCoroutine(magneeto.Pickup(stats));
+            }
+         
         }
     }
 
-    IEnumerator Pickup()
+    IEnumerator gone()
     {
         Instantiate(PickUpEffect, transform.position, transform.rotation);
 
