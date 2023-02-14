@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+       private float duration = 0.2f;
+     SpriteRenderer sprite;
     private Transform target;
     public float speed;
     private float distance;
@@ -20,12 +22,25 @@ public class Enemy : MonoBehaviour
         public bool ignited;
         public bool exploder;
     [SerializeField] float health, maxHealth = 3f;
-
+ Color red = new Color (1, 0.5f, 0.5f, 1); 
+ Color white = new Color (1, 1, 1, 1); 
     private void Start(){
+        sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
+    public void ouchie(){
+             StartCoroutine(ouchies());
+    }
+    public  IEnumerator ouchies()
+    {
+     
+        sprite.color = red;
+     
+        yield return new WaitForSeconds(duration);
 
+        sprite.color =  white; 
+    }
     public void TakeDamamge(float damageAmount){
         health -=damageAmount;
         if (damageAmount > 0) {

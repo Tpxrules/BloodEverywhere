@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
 
     public int amountofdamage = 1;
+    
         public GameObject blood;
     public void Start()
     {
@@ -32,6 +33,7 @@ public class Bullet : MonoBehaviour
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
 
                          enemyComponent.TakeDamamge(amountofdamage);
+                         enemyComponent.ouchie();
 
                   }
                   
