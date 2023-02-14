@@ -41,7 +41,7 @@ public int critchance = 10;
         float timer;
         private bool dash;
         //making multi attack possible
-
+        public AudioSource dashing;
         public int attacktype;
 //-
 
@@ -67,8 +67,9 @@ private float timestunned = 2;
     
     void Start()
     {
+      
         stats = GetComponent<movement>();
-         gameObject.GetComponent<TrailRenderer>().enabled=false; 
+        gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         currentstamina = maxstamina;
@@ -214,6 +215,7 @@ private float timestunned = 2;
 
           if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina == 5)
         {
+          dashing.Play();
           timer = 0;
           dash = true;
              GameObject melee = Instantiate(meleePrefab, transform.position ,pls.rotation);
