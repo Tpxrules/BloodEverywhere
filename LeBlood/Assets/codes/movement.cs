@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
 {
 
 //-
+public int critchance = 10;
   public GameObject bloop;
   public bool magnet = false;
     public Animator animator;
@@ -98,9 +99,15 @@ private float timestunned = 2;
 
       switch(attacktype){
           case 1:
+
+
                GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
+        if(Random.Range(0,100)  < critchance){
+           Bullet c = bullet.GetComponent<Bullet>();
+           c.leset(20);
+        }
         
         TakeDamage(1);
           break;

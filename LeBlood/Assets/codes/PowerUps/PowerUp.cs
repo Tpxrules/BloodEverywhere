@@ -33,11 +33,14 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+
+
+
     IEnumerator gone()
     {
         Instantiate(PickUpEffect, transform.position, transform.rotation);
 
-        healthManager.IncreaseHealth(stats);
+      //  healthManager.IncreaseHealth(stats);
         
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
