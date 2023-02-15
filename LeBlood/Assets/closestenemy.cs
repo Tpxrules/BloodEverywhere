@@ -5,14 +5,17 @@ using UnityEngine;
 public class closestenemy : MonoBehaviour
 {
 	// Update is called once per frame
-	void Update () {
-		FindClosestEnemy ();
-	}
-
+	Enemy closestEnemy = null;
+	
+	private float timesinceattack = 0;
+	public float attacktime  = 2;
+	public int damage  = 1;
+	public bool ElectricWave  = false;
+	float distanceToClosestEnemy = Mathf.Infinity;
 	void FindClosestEnemy()
 	{
-		float distanceToClosestEnemy = Mathf.Infinity;
-		Enemy closestEnemy = null;
+		 distanceToClosestEnemy = Mathf.Infinity;
+		 closestEnemy = null;
 		Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
 
 		foreach (Enemy currentEnemy in allEnemies) {
@@ -24,6 +27,28 @@ public class closestenemy : MonoBehaviour
 		}
 
 		Debug.DrawLine (this.transform.position, closestEnemy.transform.position);
+	}
+	void Update () {
+		FindClosestEnemy ();
+
+		   float d = Time.time - timesinceattack;
+         if(d > attacktime && ElectricWave){
+            timesinceattack = Time.time;
+			if(distanceToClosestEnemy < 5)
+			closestEnemy.TakeDamamge(damage);
+         }
+
+/*
+		// Finds the rotation of said enemy...
+
+
+        Vector3 difference = closestEnemy.transform.position - transform.position;
+
+        difference.Normalize();
+
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+*/
 	}
 
 }

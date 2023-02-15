@@ -6,6 +6,7 @@ public class CritChance : MonoBehaviour
 {
     public bool crit = false;
     public bool pen = false;
+    public bool electric = false;
     public GameObject particle;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,8 +20,16 @@ public class CritChance : MonoBehaviour
                             a.critchance += 10;
                         if(pen)
                             a.penetration += 1;
-                        
-
+                        if(electric)
+                          if(collision.gameObject.TryGetComponent<closestenemy>(out closestenemy b)){
+                            if(b.ElectricWave == false)
+                            b.ElectricWave = true;
+                            else if (b.attacktime  > 0.2f){
+                                 b.attacktime -= 0.2f;
+                                 b.damage++;
+                            }
+                                   
+                          }
 
 
                         
