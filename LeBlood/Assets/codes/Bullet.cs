@@ -7,24 +7,31 @@ public class Bullet : MonoBehaviour
 {
 
     public int amountofdamage = 1;
-    
+    int hits = 0;
+    public int pen = 1;
         public GameObject blood;
     public void Start()
     {
         Invoke("Destroy", 3);
     }
 
-        public void leset(int x){
+        public void leset(int x , int y){
             amountofdamage = x;
+            pen  = y;
         }
     void Destroy()
     {
-        Destroy(gameObject);
+        hits++;
+        if(hits>= pen){
+               GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
+                  Destroy(gameObject);
+        }
+     
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if( collision.gameObject.tag != "player" ){
+        if( collision.gameObject.tag != "player" && collision.gameObject.tag != "enemybullet"){
                 Rigidbody2D a = collision.gameObject.GetComponent<Rigidbody2D>();
                 Vector3 difference = collision.transform.position - transform.position;
                 difference.Normalize();
@@ -37,8 +44,8 @@ public class Bullet : MonoBehaviour
 
                   }
                   
-         GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
-           Destroy(gameObject);
+                Destroy();
+         //  Destroy(gameObject);
      
 
     } 

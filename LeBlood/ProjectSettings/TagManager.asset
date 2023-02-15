@@ -9,6 +9,7 @@ TagManager:
   - Bink
   - Enemy
   - chest
+  - enemybullet
   layers:
   - Default
   - TransparentFX

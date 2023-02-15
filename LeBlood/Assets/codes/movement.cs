@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
-
+public int penetration = 1;
+public int basedamage = 1;
 //-
 public int critchance = 10;
   public GameObject bloop;
@@ -105,9 +106,12 @@ private float timestunned = 2;
                GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
+          Bullet c = bullet.GetComponent<Bullet>();
         if(Random.Range(0,100)  < critchance){
-           Bullet c = bullet.GetComponent<Bullet>();
-           c.leset(20);
+          
+           c.leset(basedamage*3 , penetration);
+        }else{
+            c.leset(basedamage , penetration);
         }
         
         TakeDamage(1);
@@ -118,7 +122,7 @@ private float timestunned = 2;
         a.AddForce(pls.up * bulletForce *2);
          
         Bullet b = fastbullet.GetComponent<Bullet>();
-            b.leset(3);
+            b.leset(3, penetration);
 
 
         TakeDamage(2);
