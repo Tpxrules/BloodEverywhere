@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6546090595332562123}
   - component: {fileID: 6546090595332562122}
   m_Layer: 0
-  m_Name: CritChance
+  m_Name: Penetration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 216c53aef79eaaf40a1800cc5e542dc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8272ea7c59da847458432e7c88bf7766, type: 3}
   m_Color: {r: 1, g: 0.27987415, b: 0.27987415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318906452073560408842d8db05794b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crit: 1
-  pen: 0
+  crit: 0
+  pen: 1
   particle: {fileID: 7636441814984443682, guid: 87169f43c852705439941f272ef9d19b, type: 3}
 --- !u!61 &6546090595332562122
 BoxCollider2D:

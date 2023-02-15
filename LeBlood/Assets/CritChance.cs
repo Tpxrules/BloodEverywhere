@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CritChance : MonoBehaviour
 {
-
+    public bool crit = false;
+    public bool pen = false;
     public GameObject particle;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,8 +13,18 @@ public class CritChance : MonoBehaviour
 
                  
                 if(collision.gameObject.TryGetComponent<movement>(out movement a)){
-                         GameObject Item = Instantiate(particle, transform.position, transform.rotation);
-                         a.critchance += 10;
+
+                            GameObject Item = Instantiate(particle, transform.position, transform.rotation);
+                        if(crit)
+                            a.critchance += 10;
+                        if(pen)
+                            a.penetration += 1;
+                        
+
+
+
+                        
+                        
 
                   }
                  
