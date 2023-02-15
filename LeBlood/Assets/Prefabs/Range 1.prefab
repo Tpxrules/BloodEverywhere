@@ -51,6 +51,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784644, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
+      propertyPath: Electricity
+      value: 
+      objectReference: {fileID: 3576631833816077490, guid: b514b4f66b92e0f4fa7c3b002f9982ab, type: 3}
+    - target: {fileID: 8315981416090784644, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: floatingMessagePrefab
       value: 
       objectReference: {fileID: 4640475883573808464, guid: 78476cbc04040b0499b5ab1486f9d37d, type: 3}

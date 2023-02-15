@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef1f6431bbc04468b185df4c84e1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Electricity: {fileID: 3576631833816077490, guid: b514b4f66b92e0f4fa7c3b002f9982ab, type: 3}
   speed: 2
   ranger: 0
   range: 1
@@ -140,6 +141,7 @@ MonoBehaviour:
   xporb: {fileID: 8315981416090784648, guid: b3a9caa9a36e6ed4f871f35e841df7c0, type: 3}
   ignited: 0
   exploder: 0
+  bounced: 0
   health: 0
   maxHealth: 3
 --- !u!50 &-8949259445036039349

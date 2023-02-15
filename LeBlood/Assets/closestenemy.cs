@@ -34,8 +34,11 @@ public class closestenemy : MonoBehaviour
 		   float d = Time.time - timesinceattack;
          if(d > attacktime && ElectricWave){
             timesinceattack = Time.time;
-			if(distanceToClosestEnemy < 5)
+			if(distanceToClosestEnemy < 10){
+			closestEnemy.electric();
 			closestEnemy.TakeDamamge(damage);
+			}
+			
          }
 
 /*

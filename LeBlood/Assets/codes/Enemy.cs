@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     
        private float duration = 0.2f;
+          public GameObject Electricity;
      SpriteRenderer sprite;
     private Transform target;
     public float speed;
@@ -83,7 +84,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    public void electric(){
+              GameObject bzzzzzzz = Instantiate(Electricity, transform.position, transform.rotation);
+    }
 
      public void Update() {
        // FindClosestEnemy ();
