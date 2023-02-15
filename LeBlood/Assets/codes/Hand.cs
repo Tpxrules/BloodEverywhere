@@ -60,6 +60,19 @@ public class Hand : MonoBehaviour
      
 
     } 
+     if( collision.gameObject.tag == "chest" ){
+
+                 
+                  if(collision.gameObject.TryGetComponent<ChestOpening>(out ChestOpening a)){
+                       GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
+                         a.open();
+
+                  }
+                 
+           Destroy(gameObject);
+     
+
+    } 
       
 }
 }
