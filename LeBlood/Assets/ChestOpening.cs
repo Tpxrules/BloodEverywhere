@@ -21,6 +21,7 @@ public class ChestOpening : MonoBehaviour
     }
     public void open(){
          gameObject.GetComponent<ParticleSystem>().Play(); 
+         gameObject.GetComponent<AudioSource>().Play();
          animator.SetBool("bop", true);
     }
 
