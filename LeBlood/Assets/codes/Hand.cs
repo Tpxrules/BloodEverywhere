@@ -55,9 +55,12 @@ public class Hand : MonoBehaviour
                          enemyComponent.TakeDamamge(3);
 
                   }
+                 
            Destroy(gameObject);
      
 
     } 
+      
 }
 }
+

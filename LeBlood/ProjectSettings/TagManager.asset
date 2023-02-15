@@ -8,6 +8,7 @@ TagManager:
   - Bonk
   - Bink
   - Enemy
+  - chest
   layers:
   - Default
   - TransparentFX
