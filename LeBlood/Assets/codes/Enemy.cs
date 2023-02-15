@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    
        private float duration = 0.2f;
      SpriteRenderer sprite;
     private Transform target;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
         public GameObject xporb;
         public bool ignited;
         public bool exploder;
+        public bool bounced = false;
     [SerializeField] float health, maxHealth = 3f;
  Color red = new Color (1, 0.5f, 0.5f, 1); 
  Color white = new Color (1, 1, 1, 1); 
@@ -42,6 +44,8 @@ public class Enemy : MonoBehaviour
         sprite.color =  white; 
     }
     public void TakeDamamge(float damageAmount){
+          
+
         health -=damageAmount;
         if (damageAmount > 0) {
             GameObject floatingMessage = Instantiate(floatingMessagePrefab, transform.position, Quaternion.identity);
@@ -79,7 +83,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+
      public void Update() {
+       // FindClosestEnemy ();
+	
         distance = Vector2.Distance(transform.position,target.transform.position);
         Vector2 direction = target.transform.position - transform.position;
 
