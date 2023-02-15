@@ -5,10 +5,14 @@ using UnityEngine;
 public class lettherebeenemies : MonoBehaviour
 { 
   public int size;
-  public float spawntime = 0.1f; 
+  public float spawntime ; 
   private float timesincelastspawn;
   public GameObject[] c;
               
+  public void speedup(){
+     if(spawntime  > 0.2)
+            spawntime = spawntime - 0.1f;
+  }
     // Update is called once per frame
   void Update()
   {  
