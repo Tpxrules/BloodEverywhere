@@ -22,8 +22,9 @@ public class Bullet : MonoBehaviour
     void Destroy()
     {
         hits++;
+          GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
         if(hits>= pen){
-               GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
+             
                   Destroy(gameObject);
         }
      
