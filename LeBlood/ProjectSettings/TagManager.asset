@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - chest
   - enemybullet
+  - xp
   layers:
   - Default
   - TransparentFX

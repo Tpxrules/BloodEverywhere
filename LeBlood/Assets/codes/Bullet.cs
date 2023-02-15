@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if( collision.gameObject.tag != "player" && collision.gameObject.tag != "enemybullet"){
+        if( collision.gameObject.tag != "player" && collision.gameObject.tag != "enemybullet" && collision.gameObject.tag != "xp"){
                 Rigidbody2D a = collision.gameObject.GetComponent<Rigidbody2D>();
                 Vector3 difference = collision.transform.position - transform.position;
                 difference.Normalize();

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3620046460881289453}
   m_Layer: 0
   m_Name: XP ORB
-  m_TagString: Enemy
+  m_TagString: xp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
