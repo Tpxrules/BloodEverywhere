@@ -44,6 +44,7 @@ public int critchance = 10;
         private bool dash;
         //making multi attack possible
         public AudioSource dashing;
+          public AudioSource damagesound;
         public int attacktype;
 
         public int monee = 0;
@@ -94,6 +95,20 @@ private float timestunned = 2;
 
  public void TakeDamage(int damage)
 {
+        damagesound.Play();
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+        // check if player is dead
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+
+}
+ public void TakeSelfDamage(int damage)
+{
+       
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         // check if player is dead
@@ -131,7 +146,7 @@ private float timestunned = 2;
             c.leset(basedamage , penetration);
         }
         
-        TakeDamage(1);
+        TakeSelfDamage(1);
           break;
           case 2:
              GameObject fastbullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
@@ -142,7 +157,7 @@ private float timestunned = 2;
             b.leset(3, penetration);
 
 
-        TakeDamage(2);
+          TakeSelfDamage(2);
           break;
           default:
           attacktype = 1;
