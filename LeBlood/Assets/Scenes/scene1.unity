@@ -150766,7 +150766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 15
   size: 5
-  spawntime: 20
+  spawntime: 15
   spawnamount: 1
   c:
   - {fileID: 7310951475111531574, guid: 00e844ac7a574634289f4bc1b457d3f2, type: 3}
