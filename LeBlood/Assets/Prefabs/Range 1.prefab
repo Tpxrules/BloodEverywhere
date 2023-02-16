@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4828294942964320604, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784644, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: range
       value: 4
@@ -169,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5775129550243334439, guid: b9233cb6ac4f0034c94655064ed39882, type: 3}
   bulletPos: {fileID: 142398289}
+  rateOattack: 1.5

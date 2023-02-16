@@ -6,6 +6,7 @@ public class RangedAttack : MonoBehaviour
 {
     public GameObject bullet;
     public Transform bulletPos;
+    public float rateOattack = 1f;
 
 
     private float timer;
@@ -22,7 +23,7 @@ public class RangedAttack : MonoBehaviour
         float distance = Vector2.Distance(transform.position,player.transform.position );
         if(distance<10){
             timer += Time.deltaTime;
-            if(timer>0.8){
+            if(timer>rateOattack){
             timer = 0;
             shoot();
         }

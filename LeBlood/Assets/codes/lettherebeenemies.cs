@@ -6,12 +6,15 @@ public class lettherebeenemies : MonoBehaviour
 { 
   public int size;
   public float spawntime ; 
+  public int spawnamount = 1;
   private float timesincelastspawn;
   public GameObject[] c;
               
   public void speedup(){
+      spawnamount++;
      if(spawntime  > 0.2)
-            spawntime = spawntime - 0.1f;
+    
+            spawntime = spawntime - 0.1f;   
   }
     // Update is called once per frame
   void Update()
@@ -20,7 +23,7 @@ public class lettherebeenemies : MonoBehaviour
     if (timesincelastspawn >= spawntime )
     { 
       timesincelastspawn = 0f;
-
+       for(int i = 0 ; i < spawnamount ; i++)
       Instantiate(c[Random.Range(0,size)], new Vector2(Random.Range(-10,10),Random.Range(-10,10)), Quaternion.identity);
         
                

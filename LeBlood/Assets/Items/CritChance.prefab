@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crit: 1
   pen: 0
+  electric: 0
+  dmg: 0
+  FR: 0
   particle: {fileID: 7636441814984443682, guid: 87169f43c852705439941f272ef9d19b, type: 3}
 --- !u!61 &6546090595332562122
 BoxCollider2D:

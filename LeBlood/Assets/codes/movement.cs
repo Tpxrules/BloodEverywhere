@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
+    [SerializeField] public TextMeshProUGUI text;
 public int penetration = 1;
 public int basedamage = 1;
 //-
@@ -44,6 +45,8 @@ public int critchance = 10;
         //making multi attack possible
         public AudioSource dashing;
         public int attacktype;
+
+        public int monee = 0;
 //-
 
 private float stuntime = 0.5f;
@@ -144,11 +147,15 @@ private float timestunned = 2;
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
       //  Destroy(gameObject);
     }
-
+    public void moneeGain(){
+               monee++;
+              string s =  monee.ToString();
+              text.text =  s ;
+    }
     void Update()
     {
       
-
+      
 
 
 

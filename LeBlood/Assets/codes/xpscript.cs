@@ -33,6 +33,7 @@ public class xpscript : MonoBehaviour
        if( other.gameObject.tag == "Player" ){
          GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
          a.recoverxp();
+         a.moneeGain();
           Destroy(gameObject);
        }
        
