@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class lettherebeenemies : MonoBehaviour
 { 
+  public bool OnButton =  true;
   public int range = 20;
   public int size;
   public float spawntime ; 
@@ -26,7 +27,7 @@ public class lettherebeenemies : MonoBehaviour
   void Update()
   {  
     timesincelastspawn += Time.deltaTime;
-    if (timesincelastspawn >= spawntime )
+    if (timesincelastspawn >= spawntime && OnButton )
     { 
       timesincelastspawn = 0f;
        for(int i = 0 ; i < asa ; i++)
