@@ -8,6 +8,7 @@ public class xpscript : MonoBehaviour
     private Transform target;
     public float speed;
     private float distance;
+    
     private movement a;
    
 

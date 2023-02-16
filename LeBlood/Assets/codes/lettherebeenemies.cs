@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class lettherebeenemies : MonoBehaviour
 { 
+  public int range = 20;
   public int size;
   public float spawntime ; 
   public int spawnamount = 1;
@@ -24,7 +25,7 @@ public class lettherebeenemies : MonoBehaviour
     { 
       timesincelastspawn = 0f;
        for(int i = 0 ; i < spawnamount ; i++)
-      Instantiate(c[Random.Range(0,size)], new Vector2(Random.Range(-10,10),Random.Range(-10,10)), Quaternion.identity);
+      Instantiate(c[Random.Range(0,size)], new Vector2(Random.Range(-range,range),Random.Range(-range,range)), Quaternion.identity);
         
                
     }          

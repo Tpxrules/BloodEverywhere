@@ -9,6 +9,7 @@ public class CritChance : MonoBehaviour
     public bool electric = false;
     public bool dmg = false;
     public bool FR = false;
+    public bool stam  = false;
     public GameObject particle;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +25,9 @@ public class CritChance : MonoBehaviour
                             a.penetration += 1;
                             if(dmg)
                             a.basedamage++;
+                            if(stam && a.StaminaRate>0)
+                            a.StaminaRate =  a.StaminaRate - 0.2f;
+                            
                             if(FR && a.shootingrate > 0)
                             a.shootingrate = a.shootingrate - 0.1f;
                            

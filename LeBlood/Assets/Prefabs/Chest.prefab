@@ -124,13 +124,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2220237046317524460}
-  size: 5
+  size: 6
   items:
   - {fileID: 6546090595332562117, guid: 89e2dc80270e31246a39803f9048cfe2, type: 3}
   - {fileID: 6546090595332562117, guid: f5ef0ef5ed270194a8512d536fc59055, type: 3}
   - {fileID: 6546090595332562117, guid: 7324da4d7183004408722ee71fd2cafd, type: 3}
   - {fileID: 6546090595332562117, guid: 8ad8bc8e871b0e34cb57ad877a356116, type: 3}
   - {fileID: 6546090595332562117, guid: c6934d08a247a6346b61fdbd04b94ef5, type: 3}
+  - {fileID: 6546090595332562117, guid: 7b33b3f57369ed448a47373dc5b252b1, type: 3}
 --- !u!61 &2220237046317524463
 BoxCollider2D:
   m_ObjectHideFlags: 0
