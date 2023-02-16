@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public int amountofdamage = 1;
     int hits = 0;
     public int pen = 1;
+    public bool fanta = false;
         public GameObject blood;
     public void Start()
     {
@@ -39,7 +40,10 @@ public class Bullet : MonoBehaviour
                 collision.transform.position = collision.transform.position + difference/2;
               
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
-
+                      
+                        if(fanta){
+                            enemyComponent.hurtfriend(amountofdamage);
+                        }
                          enemyComponent.TakeDamamge(amountofdamage);
                          enemyComponent.ouchie();
 

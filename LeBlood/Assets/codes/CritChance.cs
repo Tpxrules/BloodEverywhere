@@ -10,6 +10,7 @@ public class CritChance : MonoBehaviour
     public bool dmg = false;
     public bool FR = false;
     public bool stam  = false;
+    public bool EB = false;
     public GameObject particle;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,8 @@ public class CritChance : MonoBehaviour
                             GameObject Item = Instantiate(particle, transform.position, transform.rotation);
                         if(crit)
                             a.critchance += 10;
+                              if(EB)
+                            a.chanceOfantom += 10;
                         if(pen)
                             a.penetration += 1;
                             if(dmg)

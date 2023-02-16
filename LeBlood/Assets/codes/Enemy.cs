@@ -39,9 +39,11 @@ public class Enemy : MonoBehaviour
     {
      
         sprite.color = red;
-     
+          gameObject.GetComponent<Collider2D>().enabled=false; 
+        
         yield return new WaitForSeconds(duration);
-
+        gameObject.GetComponent<Collider2D>().enabled=true; 
+        
         sprite.color =  white; 
     }
     public void TakeDamamge(float damageAmount){
@@ -117,4 +119,28 @@ public class Enemy : MonoBehaviour
                     transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
          
     }
+
+    float distanceToClosestEnemy = Mathf.Infinity;
+	Enemy closestEnemy = null;
+    // Start is called before the first frame update
+
+ 
+	public void hurtfriend(int z)
+	{
+            distanceToClosestEnemy = Mathf.Infinity;
+		Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
+
+		foreach (Enemy currentEnemy in allEnemies) {
+			float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+			if (distanceToEnemy < distanceToClosestEnemy && currentEnemy.transform.position != transform.position) {
+				distanceToClosestEnemy = distanceToEnemy;
+				closestEnemy = currentEnemy;
+			}
+		}
+
+            closestEnemy.TakeDamamge(z);
+        
+		
+	}
+
 }

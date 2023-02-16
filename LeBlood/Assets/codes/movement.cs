@@ -49,6 +49,16 @@ public int critchance = 10;
         public int monee = 0;
 //-
 
+
+
+        public int chanceOfantom = 0;
+
+
+
+
+
+
+
 private float stuntime = 0.5f;
 private float timestunned = 2;
 
@@ -109,9 +119,13 @@ private float timestunned = 2;
                GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
-          Bullet c = bullet.GetComponent<Bullet>();
+         Bullet c = bullet.GetComponent<Bullet>();
+        if(Random.Range(0,100)  < chanceOfantom){
+            c.fanta = true;
+        }
+         
         if(Random.Range(0,100)  < critchance){
-          
+
            c.leset(basedamage*3 , penetration);
         }else{
             c.leset(basedamage , penetration);

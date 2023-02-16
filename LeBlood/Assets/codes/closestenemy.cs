@@ -20,7 +20,7 @@ public class closestenemy : MonoBehaviour
 
 		foreach (Enemy currentEnemy in allEnemies) {
 			float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
-			if (distanceToEnemy < distanceToClosestEnemy) {
+			if (distanceToEnemy < distanceToClosestEnemy ) {
 				distanceToClosestEnemy = distanceToEnemy;
 				closestEnemy = currentEnemy;
 			}
