@@ -54,8 +54,8 @@ public int critchance = 10;
         public int chanceOfantom = 0;
 
 
-
-
+        private float dashdelay = 3;
+        private float lastdashed;
 
 
 
@@ -201,6 +201,7 @@ private float timestunned = 2;
 
         timestunned +=Time.deltaTime;
          lastshot += Time.deltaTime;
+        lastdashed +=Time.deltaTime;
          timesincelastrecover += Time.deltaTime;
         if (timesincelastrecover > StaminaRate ){
                 timesincelastrecover = 0;
@@ -225,11 +226,11 @@ private float timestunned = 2;
 
 
 
-          if (Input.GetButtonDown("Fire2") && currentstamina > 2)
+          if (Input.GetButtonDown("Fire2") && currentstamina > 1)
         {
             stun();
           //no longer melee now spawns sigil
-          currentstamina = currentstamina-3;
+          currentstamina = currentstamina-2;
             stamina.SetHealth(currentstamina);
             melee();
 
@@ -238,8 +239,9 @@ private float timestunned = 2;
 
 
 
-          if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina == 5)
+          if (Input.GetButtonDown("Dash") && currentHealth > 2 && currentstamina > 3  && lastdashed > dashdelay)
         {
+          lastdashed = 0;
           dashing.Play();
           timer = 0;
           dash = true;
@@ -247,7 +249,7 @@ private float timestunned = 2;
              gameObject.GetComponent<TrailRenderer>().enabled=true; 
             gameObject.GetComponent<Collider2D>().enabled=false; 
              TakeDamage(2);
-             currentstamina = 0;
+             currentstamina = currentstamina - 4;
               stamina.SetHealth(currentstamina);
                body.velocity=new Vector2(0,0);
                 body.AddForce( dashermeter);
