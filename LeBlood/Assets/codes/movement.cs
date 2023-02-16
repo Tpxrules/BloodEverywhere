@@ -91,10 +91,16 @@ private float timestunned = 2;
                 healthBar.SetMaxHealth(maxHealth);
                 stamina.SetMaxHealth(maxstamina);    
     }
-
-
+/*
+public IEnumerator Iframez(){
+    gameObject.GetComponent<Collider2D>().enabled=false; 
+         yield return new WaitForSeconds(0.4f);
+    gameObject.GetComponent<Collider2D>().enabled=true; 
+}
+*/
  public void TakeDamage(int damage)
-{
+{       
+       // StartCoroutine(Iframez());
         damagesound.Play();
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
