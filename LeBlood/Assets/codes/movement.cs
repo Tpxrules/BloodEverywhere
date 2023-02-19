@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class movement : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI text;
+
+    public GameOverScreen GOS;
 public int penetration = 1;
 public int basedamage = 1;
 //-
@@ -178,8 +180,9 @@ public IEnumerator Iframez(){
     private void Die()
     {
         // do death related actions here, such as calling a game over screen
-       
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
+       GOS.Setup(monee);
+    //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
+    
       //  Destroy(gameObject);
     }
     public void moneeGain(){
