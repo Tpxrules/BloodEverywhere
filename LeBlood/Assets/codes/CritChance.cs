@@ -28,11 +28,11 @@ public class CritChance : MonoBehaviour
                             a.penetration += 1;
                             if(dmg)
                             a.basedamage++;
-                            if(stam && a.StaminaRate>0)
-                            a.StaminaRate =  a.StaminaRate - 0.2f;
+                            if(stam && a.StaminaRate> 0.3)
+                            a.StaminaRate =  a.StaminaRate - 0.3f;
                             
-                            if(FR && a.shootingrate > 0)
-                            a.shootingrate = a.shootingrate - 0.1f;
+                            if(FR && a.shootingrate > 0.3f)
+                            a.shootingrate = a.shootingrate - 0.3f;
                            
                         if(electric)
                           if(collision.gameObject.TryGetComponent<closestenemy>(out closestenemy b)){
