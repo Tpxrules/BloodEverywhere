@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
           public GameObject Electricity;
      SpriteRenderer sprite;
     private Transform target;
+   
+    
     public float speed;
     private float distance;
     public bool ranger;
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+      
     }
     public void ouchie(){
              StartCoroutine(ouchies());
@@ -125,6 +128,10 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
 
  
+  
+//  playa = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+    
 	public void hurtfriend(int z)
 	{
             distanceToClosestEnemy = Mathf.Infinity;

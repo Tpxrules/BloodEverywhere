@@ -11,6 +11,7 @@ TagManager:
   - chest
   - enemybullet
   - xp
+  - clone
   layers:
   - Default
   - TransparentFX

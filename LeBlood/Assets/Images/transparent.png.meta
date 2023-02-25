@@ -113,7 +113,7 @@ TextureImporter:
         width: 19
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,7 +134,7 @@ TextureImporter:
         width: 9
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +155,7 @@ TextureImporter:
         width: 29
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,6 +163,27 @@ TextureImporter:
       bones: []
       spriteID: cdd6e1f819c3cd340ae14ea11bb14220
       internalID: 1847308372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transparent_3
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 89
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea3b59d4f81cf74ca2e0fb232994b34
+      internalID: 1962631465
       vertices: []
       indices: 
       edges: []
@@ -180,6 +201,7 @@ TextureImporter:
     nameFileIdTable:
       transparent_0: 2066146591
       transparent_1: 1094662710
+      transparent_3: 1962631465
       transparent_2: -1116847000
   spritePackingTag: 
   pSDRemoveMatte: 0
