@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class middleforcamera : MonoBehaviour
 {
-   public GameObject here;
-    
+   public GameObject ana;
+    public Vector3 no;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,14 @@ public class middleforcamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         here.transform.position =( transform.position - Input.mousePosition ) / 2 + transform.position;
+          no = (Input.mousePosition - transform.position) / 2;
+          if (no.x > 2){
+               no.x = 2;
+          }
+           if (no.y > 2){
+               no.y = 2;
+          }
+         ana.transform.position = no + transform.position;
       
       
     }
