@@ -108,12 +108,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784648, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: m_Name
-      value: Range 1
+      value: RamgeEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784648, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8315981416090784649, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 902d0be6537614545ac1e8ec911887e6, type: 3}
     - target: {fileID: 8315981416090784649, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: m_Color.b
       value: 1
