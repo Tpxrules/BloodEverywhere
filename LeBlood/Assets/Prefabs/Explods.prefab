@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -99259783, guid: e7ccebef1417a074a93f0cd5dc8ebb1f, type: 3}
-  m_Color: {r: 0.9056604, g: 0.056959674, b: 0.1294639, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,9 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef1f6431bbc04468b185df4c84e1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circle: {fileID: 1413751242985117226, guid: 57078e2302d64664289b35f251a17cd4, type: 3}
+  Electricity: {fileID: 0}
+  boom: {fileID: 800970381678151317, guid: 14adcc1fdec11d14fa918e4540d2c61c, type: 3}
   speed: 2
   ranger: 0
-  range: 1
+  range: 1.5
   floatingMessagePrefab: {fileID: 4640475883573808464, guid: 78476cbc04040b0499b5ab1486f9d37d, type: 3}
   a: {fileID: 494918567293345715, guid: 9611005e43618a24d829dd6dd6b6506d, type: 3}
   b: {fileID: 6802029522940051345, guid: d8e197427094bf84da42b1893dce300a, type: 3}
@@ -139,8 +142,9 @@ MonoBehaviour:
   xporb: {fileID: 8315981416090784648, guid: b3a9caa9a36e6ed4f871f35e841df7c0, type: 3}
   ignited: 0
   exploder: 1
+  bounced: 0
   health: 0
-  maxHealth: 3
+  maxHealth: 1
 --- !u!50 &3191743116293637194
 Rigidbody2D:
   serializedVersion: 4

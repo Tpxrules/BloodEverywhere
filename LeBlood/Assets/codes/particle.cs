@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class particle : MonoBehaviour
 {
-    public void Start()
-    {
-        Invoke("Destroy", 1);
-    }
-
-    void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
- 
+    public float maxtime = 1;
+    float time = 0;
+         void Update(){
+            time += Time.deltaTime;
+            if(time > maxtime){
+                Destroy(gameObject);
+            }
+        }
 }
+

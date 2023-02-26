@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
+    float time = 0;
+    public GameObject circle = null;
        private float duration = 0.2f;
           public GameObject Electricity;
      SpriteRenderer sprite;
     private Transform target;
    
-    
+  
     public float speed;
     private float distance;
     public bool ranger;
@@ -94,6 +95,10 @@ public class Enemy : MonoBehaviour
     }
 
      public void Update() {
+        if(ignited)
+        time += Time.deltaTime;
+        if(time> 0.5f)
+        doov();
        // FindClosestEnemy ();
 	
         distance = Vector2.Distance(transform.position,target.transform.position);
@@ -116,7 +121,15 @@ public class Enemy : MonoBehaviour
                      transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
                 
                 }else{
+                    //boom
+                    if(ignited == false){
+                     GameObject boo = Instantiate(circle, transform.position, transform.rotation);
+                    }
                     ignited = true;
+                    
+                   
+
+
                 }
          }else
                     transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
@@ -131,7 +144,10 @@ public class Enemy : MonoBehaviour
   
 //  playa = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-    
+    public void doov(){
+          
+                        Destroy(gameObject);
+    }
 	public void hurtfriend(int z)
 	{
             distanceToClosestEnemy = Mathf.Infinity;
