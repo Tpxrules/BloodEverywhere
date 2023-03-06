@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI text;
 
+public int bounceamount = 0;
     public GameOverScreen GOS;
 public int penetration = 1;
 public int basedamage = 1;
@@ -149,9 +150,9 @@ public IEnumerator Iframez(){
          
         if(Random.Range(0,100)  < critchance){
 
-           c.leset(basedamage*3 , penetration);
+           c.leset(basedamage*3 , penetration , bounceamount);
         }else{
-            c.leset(basedamage , penetration);
+            c.leset(basedamage , penetration, bounceamount);
         }
         
         TakeSelfDamage(1);
@@ -162,7 +163,7 @@ public IEnumerator Iframez(){
         a.AddForce(pls.up * bulletForce *2);
          
         Bullet b = fastbullet.GetComponent<Bullet>();
-            b.leset(3, penetration);
+            b.leset(3, penetration , bounceamount);
 
 
           TakeSelfDamage(2);

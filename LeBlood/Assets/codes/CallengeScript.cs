@@ -23,6 +23,7 @@ public class CallengeScript : MonoBehaviour
     void FixedUpdate(){
         float noom = timeinside/winningtime;
         slides.fillAmount = noom;
+        
         if(inside)
         timeinside += Time.deltaTime;
 

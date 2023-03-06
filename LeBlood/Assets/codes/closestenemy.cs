@@ -36,7 +36,7 @@ public class closestenemy : MonoBehaviour
             timesinceattack = Time.time;
 			if(distanceToClosestEnemy < 10){
 			closestEnemy.electric();
-			closestEnemy.TakeDamamge(damage);
+			closestEnemy.TakeDamamge(damage , 0);
 			}
 			
          }

@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
 
     public int amountofdamage = 1;
+    public int bouncers = 0;
     int hits = 0;
     public int pen = 1;
     public bool fanta = false;
@@ -16,7 +17,8 @@ public class Bullet : MonoBehaviour
         Invoke("Destroy", 3);
     }
 
-        public void leset(int x , int y){
+        public void leset(int x , int y , int z){
+            bouncers = z;
             amountofdamage = x;
             pen  = y;
         }
@@ -41,10 +43,10 @@ public class Bullet : MonoBehaviour
               
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
                       
-                        if(fanta){
-                            enemyComponent.hurtfriend(amountofdamage);
-                        }
-                         enemyComponent.TakeDamamge(amountofdamage);
+                      //  if(fanta){
+                       //     enemyComponent.hurtfriend(amountofdamage);
+                     //   }
+                         enemyComponent.TakeDamamge(amountofdamage , bouncers);
                          enemyComponent.ouchie();
 
                   }

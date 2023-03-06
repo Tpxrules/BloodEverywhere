@@ -23,7 +23,7 @@ public class CritChance : MonoBehaviour
                         if(crit)
                             a.critchance += 10;
                               if(EB)
-                            a.chanceOfantom += 10;
+                            a.bounceamount++;
                         if(pen)
                             a.penetration += 1;
                             if(dmg)
@@ -34,7 +34,8 @@ public class CritChance : MonoBehaviour
                             if(FR && a.shootingrate > 0.3f)
                             a.shootingrate = a.shootingrate - 0.3f;
                            
-                        if(electric)
+                      
+                        
                           if(collision.gameObject.TryGetComponent<closestenemy>(out closestenemy b)){
                             if(b.ElectricWave == false)
                             b.ElectricWave = true;
@@ -45,7 +46,7 @@ public class CritChance : MonoBehaviour
                                    
                           }
 
-
+                      
                         
                         
 
@@ -55,5 +56,5 @@ public class CritChance : MonoBehaviour
      
 
     } 
-}
-}
+}}
+

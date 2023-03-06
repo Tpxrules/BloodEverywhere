@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         public bool ignited;
         public bool exploder;
         public bool bounced = false;
+        int bouncies;
     [SerializeField] float health, maxHealth = 3f;
  Color red = new Color (1, 0.5f, 0.5f, 1); 
  Color white = new Color (1, 1, 1, 1); 
@@ -50,8 +51,12 @@ public class Enemy : MonoBehaviour
         
         sprite.color =  white; 
     }
-    public void TakeDamamge(float damageAmount){
-          
+    public void TakeDamamge(float damageAmount, int bounces){
+        bouncies = bounces;
+          if(bouncies >1){
+            bouncies--;
+                hurtfriend(damageAmount);
+          }
 
         health -=damageAmount;
         if (damageAmount > 0) {
@@ -148,8 +153,9 @@ public class Enemy : MonoBehaviour
           
                         Destroy(gameObject);
     }
-	public void hurtfriend(int z)
+	public void hurtfriend(float z )
 	{
+
             distanceToClosestEnemy = Mathf.Infinity;
 		Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
 
@@ -161,7 +167,9 @@ public class Enemy : MonoBehaviour
 			}
 		}
 
-            closestEnemy.TakeDamamge(z);
+            closestEnemy.TakeDamamge(z , bouncies);
+           
+            // add amount of bounces.
         
 		
 	}

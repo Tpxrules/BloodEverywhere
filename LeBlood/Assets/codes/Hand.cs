@@ -52,7 +52,7 @@ public class Hand : MonoBehaviour
                  
                   if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
                        GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
-                         enemyComponent.TakeDamamge(3);
+                         enemyComponent.TakeDamamge(3 , 0);
 
                   }
                  

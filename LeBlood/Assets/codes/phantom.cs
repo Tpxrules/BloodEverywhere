@@ -25,7 +25,7 @@ public class phantom : MonoBehaviour
 			}
 		}
 
-            closestEnemy.TakeDamamge(1);
+            closestEnemy.TakeDamamge(1, 0);
         
 		
 	}
