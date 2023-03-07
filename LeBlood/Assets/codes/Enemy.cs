@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
         public bool exploder;
         public bool bounced = false;
         int bouncies;
+        
     [SerializeField] float health, maxHealth = 3f;
  Color red = new Color (1, 0.5f, 0.5f, 1); 
  Color white = new Color (1, 1, 1, 1); 
@@ -167,7 +168,7 @@ public class Enemy : MonoBehaviour
 				closestEnemy = currentEnemy;
 			}
 		}
-
+                if(Mathf.Abs(closestEnemy.transform.position.x - transform.position.x) < 3 && Mathf.Abs(closestEnemy.transform.position.y - transform.position.y )< 3)
             closestEnemy.TakeDamamge(z , bouncies);
            
             // add amount of bounces.

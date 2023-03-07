@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pleasework
+  m_Name: Atlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -26,7 +26,7 @@ SpriteAtlas:
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
-      m_TextureCompression: 0
+      m_TextureCompression: 2
       m_CompressionQuality: 50
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
@@ -35,7 +35,7 @@ SpriteAtlas:
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
@@ -44,34 +44,36 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: a4ba7452e75e6184585e49e99c7eb07d, type: 3}
+    - {fileID: 2800000, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
     - {fileID: 2800000, guid: 1177fcd9e92c55a4e8a2699a670f5fb1, type: 3}
+    - {fileID: 2800000, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
+    - {fileID: 1220885278, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: -1934013957, guid: a4ba7452e75e6184585e49e99c7eb07d, type: 3}
-  - {fileID: 1506851605, guid: a4ba7452e75e6184585e49e99c7eb07d, type: 3}
-  - {fileID: -991266844, guid: a4ba7452e75e6184585e49e99c7eb07d, type: 3}
-  - {fileID: -465032833, guid: a4ba7452e75e6184585e49e99c7eb07d, type: 3}
-  - {fileID: 496534061, guid: a4ba7452e75e6184585e49e99c7eb07d, type: 3}
   - {fileID: 2049365048, guid: 1177fcd9e92c55a4e8a2699a670f5fb1, type: 3}
   - {fileID: -2131431808, guid: 1177fcd9e92c55a4e8a2699a670f5fb1, type: 3}
   - {fileID: -2041437174, guid: 1177fcd9e92c55a4e8a2699a670f5fb1, type: 3}
   - {fileID: -413678195, guid: 1177fcd9e92c55a4e8a2699a670f5fb1, type: 3}
   - {fileID: -904092657, guid: 1177fcd9e92c55a4e8a2699a670f5fb1, type: 3}
+  - {fileID: 1220885278, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
+  - {fileID: -1175538126, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
+  - {fileID: 471706579, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
+  - {fileID: -384838047, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
+  - {fileID: -1929384028, guid: 3394fbdf4cf4a174cab3e80ccb9dc44e, type: 3}
   m_PackedSpriteNamesToIndex:
-  - tiles1_4
-  - tiles1_2
-  - tiles1_3
-  - tiles1_0
-  - tiles1_1
   - wood
   - grass
   - carpet
   - tiles
   - grass with rock
+  - newrtiles_4
+  - newrtiles_3
+  - newrtiles_2
+  - newrtiles_1
+  - newrtiles_0
   m_RenderDataMap: {}
-  m_Tag: pleasework
+  m_Tag: Atlas
   m_IsVariant: 0
