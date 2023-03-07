@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318906452073560408842d8db05794b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingMessagePrefab: {fileID: 4640475883573808464, guid: 4f75e40bc92d65e44a057fbfc03dd2dc, type: 3}
   crit: 0
   pen: 0
   electric: 0
@@ -105,6 +106,7 @@ MonoBehaviour:
   FR: 0
   stam: 0
   EB: 1
+  text: +1 bullet bounce
   particle: {fileID: 7636441814984443682, guid: 87169f43c852705439941f272ef9d19b, type: 3}
 --- !u!61 &6546090595332562122
 BoxCollider2D:

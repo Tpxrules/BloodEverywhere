@@ -17,7 +17,7 @@ public class closestenemy : MonoBehaviour
 		 distanceToClosestEnemy = Mathf.Infinity;
 		 closestEnemy = null;
 		Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
-
+		  if(allEnemies.Length > 0){
 		foreach (Enemy currentEnemy in allEnemies) {
 			float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
 			if (distanceToEnemy < distanceToClosestEnemy ) {
@@ -25,14 +25,15 @@ public class closestenemy : MonoBehaviour
 				closestEnemy = currentEnemy;
 			}
 		}
-
+		  }
 		Debug.DrawLine (this.transform.position, closestEnemy.transform.position);
 	}
 	void Update () {
-		FindClosestEnemy ();
+	
 
 		   float d = Time.time - timesinceattack;
          if(d > attacktime && ElectricWave){
+				FindClosestEnemy ();
             timesinceattack = Time.time;
 			if(distanceToClosestEnemy < 10){
 			closestEnemy.electric();

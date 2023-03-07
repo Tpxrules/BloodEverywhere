@@ -158,6 +158,7 @@ public class Enemy : MonoBehaviour
 
             distanceToClosestEnemy = Mathf.Infinity;
 		Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
+        if(allEnemies.Length > 1){
 
 		foreach (Enemy currentEnemy in allEnemies) {
 			float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
@@ -173,5 +174,6 @@ public class Enemy : MonoBehaviour
         
 		
 	}
-
+    
+    }
 }

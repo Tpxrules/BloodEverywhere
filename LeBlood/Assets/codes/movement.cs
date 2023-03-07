@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class movement : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI text;
+      public GameObject floatingMessagePrefab;
 
 public int bounceamount = 0;
     public GameOverScreen GOS;

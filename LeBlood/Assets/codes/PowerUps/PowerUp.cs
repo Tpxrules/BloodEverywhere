@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+      public GameObject floatingMessagePrefab;
     public GameObject PickUpEffect;
     public float duration = 4f;
     public HealthManager healthManager;
@@ -13,6 +14,7 @@ public class PowerUp : MonoBehaviour
      public bool maaag = false;
     public MangetCode magneeto;
     private movement stats;
+        public string text;
     
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -29,7 +31,8 @@ public class PowerUp : MonoBehaviour
                 StartCoroutine(gone());
                     StartCoroutine(magneeto.Pickup(stats));
             }
-         
+            GameObject floatingMessage = Instantiate(floatingMessagePrefab, transform.position, Quaternion.identity);
+                        floatingMessage.GetComponent<FloatingMessage>().SetMessage(text);
         }
     }
 

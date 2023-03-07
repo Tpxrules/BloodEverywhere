@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CritChance : MonoBehaviour
 {
+     public GameObject floatingMessagePrefab;
     public bool crit = false;
     public bool pen = false;
     public bool electric = false;
@@ -11,6 +12,7 @@ public class CritChance : MonoBehaviour
     public bool FR = false;
     public bool stam  = false;
     public bool EB = false;
+    public string text;
     public GameObject particle;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,7 +48,8 @@ public class CritChance : MonoBehaviour
                                    
                           }
 
-                      
+                       GameObject floatingMessage = Instantiate(floatingMessagePrefab, transform.position, Quaternion.identity);
+                        floatingMessage.GetComponent<FloatingMessage>().SetMessage(text);
                         
                         
 

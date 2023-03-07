@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ba5f0ea22a0764193993d71c988d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingMessagePrefab: {fileID: 4640475883573808464, guid: 9b92b6c2a6c262f48984ead395ccf992, type: 3}
   PickUpEffect: {fileID: 1783276646780061817, guid: 1c0520325bd5b534188c40bef406dc5c, type: 3}
   duration: 4
   healthManager: {fileID: 0}
@@ -169,3 +170,4 @@ MonoBehaviour:
   isInvincible: {fileID: 1140307351883858885}
   maaag: 0
   magneeto: {fileID: 0}
+  text: 4s Invincibility
