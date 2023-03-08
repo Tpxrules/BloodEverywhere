@@ -27,13 +27,13 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.394
+    value: 0.477
   smoothness:
     overrideState: 1
     value: 0.231
   roundness:
     overrideState: 1
-    value: 0.935
+    value: 0.965
   rounded:
     overrideState: 0
     value: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.135
+    value: 0.334
   fastMode:
     overrideState: 1
     value: 1
