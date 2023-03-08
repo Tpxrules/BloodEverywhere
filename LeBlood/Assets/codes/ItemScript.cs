@@ -47,13 +47,11 @@ public class ItemScript : MonoBehaviour
                     break;
                       case 6:
                     //stam
-                      if( a.StaminaRate> 0.3)
-                            a.StaminaRate =  a.StaminaRate - 0.3f;
+                            a.StaminaRate =  a.StaminaRate * 0.75f;
                     break; 
                      case 7:
                     //FR
-                      if( a.shootingrate > 0.3f)
-                            a.shootingrate = a.shootingrate - 0.3f;
+                            a.shootingrate = a.shootingrate * 0.75f;
                     break;
                       case 8:
                     //machinegun
