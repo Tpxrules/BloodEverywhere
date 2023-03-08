@@ -61,7 +61,17 @@ public class ItemScript : MonoBehaviour
                     a.shootingrate = a.shootingrate / 2;
 
                     break;
+                     case 9:
+                    //crit
+                      a.ORBHEAL ++;
+                    break;
+                      case 10:
+                    //crit
+                    if( a.maxstamina < 12)
+                    a.maxstamina++;
+                    a.staminabackdrop.SetHealth(a.maxstamina);
 
+                    break;
 
 
                   }

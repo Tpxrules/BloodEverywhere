@@ -10,6 +10,7 @@ public class movement : MonoBehaviour
  
 
 public int bounceamount = 0;
+public int ORBHEAL = 0;
     public GameOverScreen GOS;
 public int penetration = 1;
 public float basedamage = 1;
@@ -29,11 +30,12 @@ public int critchance = 10;
     private movement stats;
     public float runSpeed = 20.0f;
         public int maxHealth = 100; // maximum health of the player
-        public int currentHealth; // current health of the player
+        public float currentHealth; // current health of the player
         public newhealthbar healthBar;
         public float StaminaRate = 0.2f;
         private float timesincelastrecover;
         public newhealthbar stamina;
+          public newhealthbar staminabackdrop;
         public int maxstamina = 5; // maximum stamina of the player
         public int currentstamina; // current stamina of the player
         public float bulletForce ;
@@ -67,6 +69,14 @@ public int critchance = 10;
 private float stuntime = 0.5f;
 private float timestunned = 2;
 
+public void updatehealth(){
+  int no = (int)currentHealth;
+healthBar.SetHealth(no);
+}
+public int chance(){
+
+return Random.Range(0,100) ;
+}
     public void stun(){
       timestunned = 0;
     }
@@ -81,7 +91,7 @@ private float timestunned = 2;
     {
          GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
            currentHealth = maxHealth;
-            healthBar.SetHealth(currentHealth);
+             updatehealth();
     }
     
     void Start()
@@ -93,7 +103,9 @@ private float timestunned = 2;
         currentHealth = maxHealth;
         currentstamina = maxstamina;
                 healthBar.SetMaxHealth(maxHealth);
-                stamina.SetMaxHealth(maxstamina);    
+                stamina.SetMaxHealth(12);    
+                staminabackdrop.SetMaxHealth(12); 
+                staminabackdrop.SetHealth(5);
     }
 /*
 public IEnumerator Iframez(){
@@ -102,12 +114,12 @@ public IEnumerator Iframez(){
     gameObject.GetComponent<Collider2D>().enabled=true; 
 }
 */
- public void TakeDamage(int damage)
+ public void TakeDamage(float damage)
 {       
        // StartCoroutine(Iframez());
         damagesound.Play();
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        updatehealth();
         // check if player is dead
         if (currentHealth <= 0)
         {
@@ -116,11 +128,11 @@ public IEnumerator Iframez(){
         }
 
 }
- public void TakeSelfDamage(int damage)
+ public void TakeSelfDamage(float damage)
 {
        
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+       updatehealth();
         // check if player is dead
         if (currentHealth <= 0)
         {
@@ -145,18 +157,18 @@ public IEnumerator Iframez(){
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
          Bullet c = bullet.GetComponent<Bullet>();
-        if(Random.Range(0,100)  < chanceOfantom){
+        if(chance()  < chanceOfantom){
             c.fanta = true;
         }
          
-        if(Random.Range(0,100)  < critchance){
+        if(chance()  < critchance){
 
            c.leset(basedamage*3 , penetration , bounceamount);
         }else{
             c.leset(basedamage , penetration, bounceamount);
         }
         
-        TakeSelfDamage(1);
+        TakeSelfDamage(basedamage);
           break;
           case 2:
              GameObject fastbullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
