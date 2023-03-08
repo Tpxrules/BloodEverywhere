@@ -15,6 +15,11 @@ public void RestartGame ()
         Time.timeScale = 1;
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
     }
+    public void MENUBUTTON ()
+    {
+        Time.timeScale = 1;
+          SceneManager.LoadScene(0);
+    }
     [SerializeField] public TextMeshProUGUI text;
 
   public void Setup(int score){

@@ -170,7 +170,7 @@ public class Enemy : MonoBehaviour
 				closestEnemy = currentEnemy;
 			}
 		}
-                if(Mathf.Abs(closestEnemy.transform.position.x - transform.position.x) < 3 && Mathf.Abs(closestEnemy.transform.position.y - transform.position.y )< 3)
+                if(Mathf.Abs(closestEnemy.transform.position.x - transform.position.x) < 4 && Mathf.Abs(closestEnemy.transform.position.y - transform.position.y )< 4)
             closestEnemy.TakeDamamge(z , bouncies);
            
             // add amount of bounces.
