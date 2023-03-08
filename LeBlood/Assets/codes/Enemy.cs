@@ -33,7 +33,9 @@ public class Enemy : MonoBehaviour
  Color red = new Color (1, 0.5f, 0.5f, 1); 
  Color white = new Color (1, 1, 1, 1); 
     private void Start(){
+        
         sprite = GetComponent<SpriteRenderer>();
+        white =  sprite.color;
         health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
       
@@ -62,7 +64,7 @@ public class Enemy : MonoBehaviour
         health -=damageAmount;
         if (damageAmount > 0) {
             GameObject floatingMessage = Instantiate(floatingMessagePrefab, transform.position, Quaternion.identity);
-            floatingMessage.GetComponent<FloatingMessage>().SetMessage(damageAmount.ToString());
+            floatingMessage.GetComponent<FloatingMessage>().SetMessage(Mathf.Round(damageAmount*10) .ToString());
         }
         if(health<=0){
                 //spawning le funny blood

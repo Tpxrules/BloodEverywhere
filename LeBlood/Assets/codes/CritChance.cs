@@ -5,13 +5,7 @@ using UnityEngine;
 public class CritChance : MonoBehaviour
 {
      public GameObject floatingMessagePrefab;
-    public bool crit = false;
-    public bool pen = false;
-    public bool electric = false;
-    public bool dmg = false;
-    public bool FR = false;
-    public bool stam  = false;
-    public bool EB = false;
+     public int type;
     public string text;
     public GameObject particle;
     void OnTriggerEnter2D(Collider2D collision)
@@ -20,25 +14,28 @@ public class CritChance : MonoBehaviour
 
                  
                 if(collision.gameObject.TryGetComponent<movement>(out movement a)){
-
-                            GameObject Item = Instantiate(particle, transform.position, transform.rotation);
-                        if(crit)
-                            a.critchance += 10;
-                              if(EB)
-                            a.bounceamount++;
-                        if(pen)
-                            a.penetration += 1;
-                            if(dmg)
-                            a.basedamage++;
-                            if(stam && a.StaminaRate> 0.3)
-                            a.StaminaRate =  a.StaminaRate - 0.3f;
-                            
-                            if(FR && a.shootingrate > 0.3f)
-                            a.shootingrate = a.shootingrate - 0.3f;
-                           
-                      
-                        
-                          if(collision.gameObject.TryGetComponent<closestenemy>(out closestenemy b)){
+                   GameObject Item = Instantiate(particle, transform.position, transform.rotation);
+                    
+                  switch(type){
+                    case 1:
+                    //crit
+                      a.critchance += 10;
+                    break;
+                    case 2:
+                    //EB
+                       a.bounceamount++;
+                    break;
+                    case 3:
+                    //pen
+                     a.penetration += 1;
+                    break;
+                    case 4:
+                    //dmg
+                    a.basedamage++;
+                    break;
+                      case 5:
+                    //electric
+                    if(collision.gameObject.TryGetComponent<closestenemy>(out closestenemy b)){
                             if(b.ElectricWave == false)
                             b.ElectricWave = true;
                             else if (b.attacktime  > 0.2f){
@@ -47,6 +44,28 @@ public class CritChance : MonoBehaviour
                             }
                                    
                           }
+                    break;
+                      case 6:
+                    //stam
+                      if( a.StaminaRate> 0.3)
+                            a.StaminaRate =  a.StaminaRate - 0.3f;
+                    break; 
+                     case 7:
+                    //FR
+                      if( a.shootingrate > 0.3f)
+                            a.shootingrate = a.shootingrate - 0.3f;
+                    break;
+                      case 8:
+                    //machinegun
+                     a.basedamage =   a.basedamage * 0.75f;
+                    a.shootingrate = a.shootingrate / 2;
+
+                    break;
+
+
+
+                  }
+
 
                        GameObject floatingMessage = Instantiate(floatingMessagePrefab, transform.position, Quaternion.identity);
                         floatingMessage.GetComponent<FloatingMessage>().SetMessage(text);

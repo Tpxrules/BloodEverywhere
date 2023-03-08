@@ -26,6 +26,16 @@ public class explosionscript : MonoBehaviour
         
          player.gameObject.GetComponent<movement>().TakeDamage(20);
         
+       }else  if( other.gameObject.tag == "Enemy" ){
+          if(other.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent)){
+                      
+                      //  if(fanta){
+                       //     enemyComponent.hurtfriend(amountofdamage);
+                     //   }
+                         enemyComponent.TakeDamamge(2 , 1);
+                         enemyComponent.ouchie();
+
+                  }
        }
        
       

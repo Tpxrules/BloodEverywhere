@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class movement : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI text;
-      public GameObject floatingMessagePrefab;
+ 
 
 public int bounceamount = 0;
     public GameOverScreen GOS;
 public int penetration = 1;
-public int basedamage = 1;
+public float basedamage = 1;
 //-
 public int critchance = 10;
   public GameObject bloop;

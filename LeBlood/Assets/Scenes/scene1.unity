@@ -367,7 +367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2013548585}
-  floatingMessagePrefab: {fileID: 0}
   bounceamount: 0
   GOS: {fileID: 2010379962}
   penetration: 1
