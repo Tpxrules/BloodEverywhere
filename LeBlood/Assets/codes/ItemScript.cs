@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CritChance : MonoBehaviour
+public class ItemScript : MonoBehaviour
 {
      public GameObject floatingMessagePrefab;
      public int type;
