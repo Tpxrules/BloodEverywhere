@@ -6,12 +6,9 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {  
-    [SerializeField] public TextMeshProUGUI text;
- 
+  [SerializeField] public TextMeshProUGUI text;
   public AudioSource revive;
-
-    public GameOverScreen GOS;
-
+  public GameOverScreen GOS;
   public GameObject bloop;
   public bool magnet = false;
     public Animator animator;
@@ -19,49 +16,34 @@ public class movement : MonoBehaviour
     public Transform pls;
     public GameObject BulletPrefab;
     public GameObject meleePrefab;
-     float horizontal;
-     float vertical;
+    float horizontal;
+    float vertical;
     public bool isInvincible = false;
     float moveLimiter = 0.7f;
     private movement stats;
     public float runSpeed = 20.0f;
         public int maxHealth = 100; // maximum health of the player
         public float currentHealth; // current health of the player
-        public newhealthbar healthBar;
-      
+        public newhealthbar healthBar;     
         private float timesincelastrecover;
         public newhealthbar stamina;
-          public newhealthbar staminabackdrop;
-      
+        public newhealthbar staminabackdrop;     
         public int currentstamina; // current stamina of the player
-         float bulletForce = 400;
-
+        float bulletForce = 400;
         public bool held = false;
-    
         public float lastshot;
-  
         //implementing Dashing.
         public float dashforce = 1;
         float timer;
         private bool dash;
         //making multi attack possible
         public AudioSource dashing;
-          public AudioSource damagesound;
+        public AudioSource damagesound;
         public int attacktype;
-
         public int monee = 0;
-//-
-
-
-
         public int chanceOfantom = 0;
-
-
         private float dashdelay = 3;
         private float lastdashed;
-
-
-
 private float stuntime = 0.5f;
 private float timestunned = 2;
 
