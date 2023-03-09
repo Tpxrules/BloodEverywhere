@@ -35,8 +35,8 @@ public class xpscript : MonoBehaviour
          GameObject sploch = Instantiate(blood, transform.position, transform.rotation);
          a.recoverxp();
          a.moneeGain();
-         if(a.maxHealth - a.currentHealth > a.ORBHEAL*3)
-         a.currentHealth +=  a.ORBHEAL*3;
+         if(a.maxHealth - a.currentHealth > staticinfo.ORBHEAL*3)
+         a.currentHealth +=  staticinfo.ORBHEAL*3;
          else
          a.currentHealth = a.maxHealth;
          a.updatehealth();

@@ -19,19 +19,19 @@ public class ItemScript : MonoBehaviour
                   switch(type){
                     case 1:
                     //crit
-                      a.critchance += 10;
+                      staticinfo.critchance += 10;
                     break;
                     case 2:
                     //EB
-                       a.bounceamount++;
+                       staticinfo.bounceamount++;
                     break;
                     case 3:
                     //pen
-                     a.penetration += 1;
+                     staticinfo.penetration += 1;
                     break;
                     case 4:
                     //dmg
-                    a.basedamage++;
+                    staticinfo.basedamage++;
                     break;
                       case 5:
                     //electric
@@ -47,27 +47,27 @@ public class ItemScript : MonoBehaviour
                     break;
                       case 6:
                     //stam
-                            a.StaminaRate =  a.StaminaRate * 0.75f;
+                            staticinfo.StaminaRate =  staticinfo.StaminaRate * 0.75f;
                     break; 
                      case 7:
                     //FR
-                            a.shootingrate = a.shootingrate * 0.75f;
+                            staticinfo.shootingrate = staticinfo.shootingrate * 0.75f;
                     break;
                       case 8:
                     //machinegun
-                     a.basedamage =   a.basedamage * 0.75f;
-                    a.shootingrate = a.shootingrate / 2;
+                     staticinfo.basedamage =   staticinfo.basedamage * 0.75f;
+                    staticinfo.shootingrate = staticinfo.shootingrate / 2;
 
                     break;
                      case 9:
                     //crit
-                      a.ORBHEAL ++;
+                      staticinfo.ORBHEAL ++;
                     break;
                       case 10:
                     //crit
-                    if( a.maxstamina < 12)
-                    a.maxstamina++;
-                    a.staminabackdrop.SetHealth(a.maxstamina);
+                    if( staticinfo.maxstamina < 12)
+                    staticinfo.maxstamina++;
+                    a.staminabackdrop.SetHealth(staticinfo.maxstamina);
 
                     break;
 

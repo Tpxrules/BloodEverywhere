@@ -9,13 +9,9 @@ public class movement : MonoBehaviour
     [SerializeField] public TextMeshProUGUI text;
  
 
-public int bounceamount = 0;
-public int ORBHEAL = 0;
+
     public GameOverScreen GOS;
-public int penetration = 1;
-public float basedamage = 1;
-//-
-public int critchance = 10;
+
   public GameObject bloop;
   public bool magnet = false;
     public Animator animator;
@@ -23,8 +19,8 @@ public int critchance = 10;
     public Transform pls;
     public GameObject BulletPrefab;
     public GameObject meleePrefab;
-    public float horizontal;
-    public float vertical;
+     float horizontal;
+     float vertical;
     public bool isInvincible = false;
     float moveLimiter = 0.7f;
     private movement stats;
@@ -32,16 +28,16 @@ public int critchance = 10;
         public int maxHealth = 100; // maximum health of the player
         public float currentHealth; // current health of the player
         public newhealthbar healthBar;
-        public float StaminaRate = 0.2f;
+      
         private float timesincelastrecover;
         public newhealthbar stamina;
           public newhealthbar staminabackdrop;
-        public int maxstamina = 5; // maximum stamina of the player
+      
         public int currentstamina; // current stamina of the player
-        public float bulletForce ;
+         float bulletForce = 400;
 
         public bool held = false;
-        public float shootingrate = 0.2f;
+    
         public float lastshot;
   
         //implementing Dashing.
@@ -81,7 +77,7 @@ return Random.Range(0,100) ;
       timestunned = 0;
     }
     public void recoverxp(){
-          if(  currentstamina < maxstamina){
+          if(  currentstamina < staticinfo.maxstamina){
                     
                      currentstamina++;
                      stamina.SetHealth(currentstamina);                     
@@ -101,7 +97,7 @@ return Random.Range(0,100) ;
         gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        currentstamina = maxstamina;
+        currentstamina = staticinfo.maxstamina;
                 healthBar.SetMaxHealth(maxHealth);
                 stamina.SetMaxHealth(12);    
                 staminabackdrop.SetMaxHealth(12); 
@@ -161,14 +157,14 @@ public IEnumerator Iframez(){
             c.fanta = true;
         }
          
-        if(chance()  < critchance){
+        if(chance()  < staticinfo.critchance){
 
-           c.leset(basedamage*3 , penetration , bounceamount);
+           c.leset(staticinfo.basedamage*3 , staticinfo.penetration , staticinfo.bounceamount);
         }else{
-            c.leset(basedamage , penetration, bounceamount);
+            c.leset(staticinfo.basedamage , staticinfo.penetration, staticinfo.bounceamount);
         }
         
-        TakeSelfDamage(basedamage);
+        TakeSelfDamage(staticinfo.basedamage);
           break;
           case 2:
              GameObject fastbullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
@@ -176,7 +172,7 @@ public IEnumerator Iframez(){
         a.AddForce(pls.up * bulletForce *2);
          
         Bullet b = fastbullet.GetComponent<Bullet>();
-            b.leset(3, penetration , bounceamount);
+            b.leset(3, staticinfo.penetration , staticinfo.bounceamount);
 
 
           TakeSelfDamage(2);
@@ -241,7 +237,7 @@ public IEnumerator Iframez(){
          lastshot += Time.deltaTime;
         lastdashed +=Time.deltaTime;
          timesincelastrecover += Time.deltaTime;
-        if (timesincelastrecover > StaminaRate ){
+        if (timesincelastrecover > staticinfo.StaminaRate ){
                 timesincelastrecover = 0;
             recoverxp();
         } 
@@ -256,7 +252,7 @@ public IEnumerator Iframez(){
 
 
 
-        if (held ==true && currentHealth > 1 && lastshot > shootingrate)
+        if (held ==true && currentHealth > 1 && lastshot > staticinfo.shootingrate)
         {
             lastshot = 0;
             Shoot();
