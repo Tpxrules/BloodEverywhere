@@ -59,6 +59,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784644, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
+      propertyPath: reverse
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315981416090784644, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: Electricity
       value: 
       objectReference: {fileID: 3576631833816077490, guid: b514b4f66b92e0f4fa7c3b002f9982ab, type: 3}
@@ -112,11 +116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784647, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.1875
+      value: 1.875
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784647, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.1875
+      value: 1.875
       objectReference: {fileID: 0}
     - target: {fileID: 8315981416090784648, guid: 277c6c23e5397734fb9c0b0672b0d59f, type: 3}
       propertyPath: m_Name

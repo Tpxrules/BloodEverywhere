@@ -165,6 +165,9 @@ public IEnumerator Iframez(){
         }
         if(chance() >= staticinfo.FreeAmmoChance)
         TakeSelfDamage(staticinfo.basedamage);
+
+
+
           break;
           case 2:
              GameObject fastbullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
@@ -252,7 +255,7 @@ public IEnumerator Iframez(){
 
 
 
-        if (held ==true && currentHealth > 1 && lastshot > staticinfo.shootingrate)
+        if (held ==true && currentHealth > staticinfo.basedamage && lastshot > staticinfo.shootingrate)
         {
             lastshot = 0;
             Shoot();
