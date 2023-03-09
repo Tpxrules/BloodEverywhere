@@ -70,6 +70,10 @@ public class ItemScript : MonoBehaviour
                     a.staminabackdrop.SetHealth(staticinfo.maxstamina);
 
                     break;
+                    case 11:
+                    staticinfo.FreeAmmoChance += 10;
+
+                    break;
 
 
                   }

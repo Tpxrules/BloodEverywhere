@@ -367,33 +367,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2013548585}
-  bounceamount: 0
-  ORBHEAL: 0
   GOS: {fileID: 2010379962}
-  penetration: 1
-  basedamage: 1
-  critchance: 10
   bloop: {fileID: 2413101681620709630, guid: 191d1fdbb59021e44871caeac1d9d094, type: 3}
   magnet: 0
   animator: {fileID: 284199908}
   pls: {fileID: 1003336648}
   BulletPrefab: {fileID: 1725837270759254984, guid: 8c7bcd1e6392288499338e76a29d2242, type: 3}
   meleePrefab: {fileID: 2121066969505848376, guid: 5e7268cb56b361743ae01660b083fa09, type: 3}
-  horizontal: 0
-  vertical: 0
   isInvincible: 0
   runSpeed: 5
   maxHealth: 50
   currentHealth: 0
   healthBar: {fileID: 1661149019}
-  StaminaRate: 2
   stamina: {fileID: 952932329}
   staminabackdrop: {fileID: 544672852}
-  maxstamina: 5
   currentstamina: 0
-  bulletForce: 400
   held: 0
-  shootingrate: 1
   lastshot: 0
   dashforce: 4
   dashing: {fileID: 284199910}

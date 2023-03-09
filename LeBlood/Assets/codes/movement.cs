@@ -163,7 +163,7 @@ public IEnumerator Iframez(){
         }else{
             c.leset(staticinfo.basedamage , staticinfo.penetration, staticinfo.bounceamount);
         }
-        
+        if(chance() >= staticinfo.FreeAmmoChance)
         TakeSelfDamage(staticinfo.basedamage);
           break;
           case 2:
