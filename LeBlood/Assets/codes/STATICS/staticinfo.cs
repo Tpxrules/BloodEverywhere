@@ -15,4 +15,5 @@ public static class staticinfo
     static public float shootingrate = 0.7f;
     static public int maxstamina = 5; // maximum stamina of the player
     static public int FreeAmmoChance = 0;
+    static public int DIO = 0;
 }

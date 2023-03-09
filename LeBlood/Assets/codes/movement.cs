@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+
 
 public class movement : MonoBehaviour
-{
+{  
     [SerializeField] public TextMeshProUGUI text;
  
-
+  public AudioSource revive;
 
     public GameOverScreen GOS;
 
@@ -65,6 +65,20 @@ public class movement : MonoBehaviour
 private float stuntime = 0.5f;
 private float timestunned = 2;
 
+public void ZAWARLDO(){
+  currentHealth = maxHealth;
+  revive.Play();
+  StartCoroutine(gofaster());
+  //playeffect;
+}
+  public IEnumerator gofaster()
+    {
+  
+       runSpeed = runSpeed*2;
+        yield return new WaitForSeconds(3);
+        runSpeed = runSpeed/2;
+       
+    }
 public void updatehealth(){
   int no = (int)currentHealth;
 healthBar.SetHealth(no);
@@ -92,7 +106,7 @@ return Random.Range(0,100) ;
     
     void Start()
     {
-      
+
         stats = GetComponent<movement>();
         gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
@@ -119,6 +133,10 @@ public IEnumerator Iframez(){
         // check if player is dead
         if (currentHealth <= 0)
         {
+          if(staticinfo.DIO > 0){
+            staticinfo.DIO--;
+            ZAWARLDO();
+          }else
             Die();
             return;
         }

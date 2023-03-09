@@ -74,6 +74,10 @@ public class ItemScript : MonoBehaviour
                     staticinfo.FreeAmmoChance += 10;
 
                     break;
+                      case 12:
+                    staticinfo.DIO++;
+
+                    break;
 
 
                   }
