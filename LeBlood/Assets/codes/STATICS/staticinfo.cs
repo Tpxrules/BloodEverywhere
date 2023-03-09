@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class staticinfo 
 {
-    static public float vol ;
+    static public float vol = 0.5f ;
     static public int bounceamount = 0;
     static public int ORBHEAL = 0;
 

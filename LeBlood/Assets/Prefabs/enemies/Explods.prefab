@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -99259783, guid: e7ccebef1417a074a93f0cd5dc8ebb1f, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1014762289, guid: 6ed7d989de6dfe04da0de1a66194132c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,9 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef1f6431bbc04468b185df4c84e1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reverse: -1
   circle: {fileID: 1413751242985117226, guid: 57078e2302d64664289b35f251a17cd4, type: 3}
   Electricity: {fileID: 0}
-  boom: {fileID: 800970381678151317, guid: 14adcc1fdec11d14fa918e4540d2c61c, type: 3}
+  yuh: {fileID: 2183651668764518338}
   speed: 2
   ranger: 0
   range: 1.5
@@ -176,7 +177,7 @@ Animator:
   m_GameObject: {fileID: 6696504713618986121}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07a775b0292e21d49b3172da8fd12c81, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7c4310d755065b444868f992aa85af75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

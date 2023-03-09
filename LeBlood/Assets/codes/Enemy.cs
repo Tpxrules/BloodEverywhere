@@ -5,12 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     float time = 0;
+    public int reverse = 1;
     public GameObject circle = null;
        private float duration = 0.2f;
           public GameObject Electricity;
      SpriteRenderer sprite;
     private Transform target;
-   
+   public Animator yuh = null;
   
     public float speed;
     private float distance;
@@ -113,10 +114,10 @@ public class Enemy : MonoBehaviour
         Vector2 direction = target.transform.position - transform.position;
 
         if(direction.x > 1){
-            transform.localScale  = new Vector3(1,1,1);
+            transform.localScale  = new Vector3(reverse*1,1,1);
         }
          else
-          transform.localScale  = new Vector3(-1,1,1);
+          transform.localScale  = new Vector3(reverse*-1,1,1);
        
          if(ranger){
 
@@ -132,6 +133,7 @@ public class Enemy : MonoBehaviour
                     //boom
                     if(ignited == false){
                      GameObject boo = Instantiate(circle, transform.position, transform.rotation);
+                     yuh.SetBool("explode", true);
                     }
                     ignited = true;
                     
@@ -153,7 +155,7 @@ public class Enemy : MonoBehaviour
 //  playa = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     public void doov(){
-          
+
                         Destroy(gameObject);
     }
 	public void hurtfriend(float z )
