@@ -6,6 +6,7 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {  
+  public float stringtime  = 1f;
   [SerializeField] public TextMeshProUGUI text;
   public AudioSource revive;
   public GameOverScreen GOS;
@@ -206,7 +207,9 @@ public IEnumerator Iframez(){
     void Update()
     {
       
-      
+      if(stringtime < 1){
+        stringtime+= Time.deltaTime;
+      }
 
 
 
@@ -303,6 +306,9 @@ public IEnumerator Iframez(){
         }
         animator.SetFloat("HS", horizontal);
         animator.SetFloat("VS" , vertical);
+        if(stringtime >= 1)
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        else
+           body.velocity = new Vector2(horizontal * runSpeed*2, vertical * runSpeed);
     }
 }

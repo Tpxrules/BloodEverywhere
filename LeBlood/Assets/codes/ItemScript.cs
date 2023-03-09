@@ -78,6 +78,10 @@ public class ItemScript : MonoBehaviour
                     staticinfo.DIO++;
 
                     break;
+                       case 13:
+                    staticinfo.stringu = true;
+
+                    break;
 
 
                   }

@@ -1188,8 +1188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47.6, y: -70.708}
-  m_SizeDelta: {x: 39.8567, y: 32.624}
+  m_AnchoredPosition: {x: -25.2383, y: -70.708}
+  m_SizeDelta: {x: 84.5799, y: 32.624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782968453
 MonoBehaviour:
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'v1.8
+  m_text: 'Alpha 19
 
 
 

@@ -16,4 +16,5 @@ public static class staticinfo
     static public int maxstamina = 5; // maximum stamina of the player
     static public int FreeAmmoChance = 0;
     static public int DIO = 0;
+    static public bool stringu = false;
 }

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
           public GameObject Electricity;
      SpriteRenderer sprite;
     private Transform target;
+      private movement zaplaya;
    public Animator yuh = null;
   
     public float speed;
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
         white =  sprite.color;
         health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+          zaplaya = GameObject.FindGameObjectWithTag("Player").GetComponent<movement>();
       
     }
     public void ouchie(){
@@ -69,6 +71,8 @@ public class Enemy : MonoBehaviour
         }
         if(health<=0){
                 //spawning le funny blood
+                if(staticinfo.stringu == true)
+                 zaplaya.stringtime = 0f;
                 int number;
                 number =Random.Range(1,6);
                 switch(number){
