@@ -10,6 +10,7 @@ public class CallengeScript : MonoBehaviour
         public float winningtime = 5;
         bool inside = false;
         float divide;
+        public bool total = false;
       
       private void OnTriggerEnter2D(Collider2D other) {
        if( other.gameObject.tag == "Player" ){
@@ -35,6 +36,7 @@ public class CallengeScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         if( other.gameObject.tag == "Player" ){
+            if(!total)
             timeinside = 0;
             inside = false;
         
