@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6546090595332562123}
   - component: {fileID: 6546090595332562122}
   m_Layer: 0
-  m_Name: string
+  m_Name: Thorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8272ea7c59da847458432e7c88bf7766, type: 3}
-  m_Color: {r: 0, g: 0.77345467, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ac47ed8ccc79cf04dae198b9cc5b3a6f, type: 3}
+  m_Color: {r: 0.12149644, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingMessagePrefab: {fileID: 4640475883573808464, guid: 4f75e40bc92d65e44a057fbfc03dd2dc, type: 3}
-  type: 13
-  text: gain speed when killing an enemy(stacks)
+  type: 14
+  text: hurt when hurt
   particle: {fileID: 7636441814984443682, guid: 87169f43c852705439941f272ef9d19b, type: 3}
 --- !u!61 &6546090595332562122
 BoxCollider2D:

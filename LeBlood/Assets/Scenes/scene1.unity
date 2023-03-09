@@ -367,6 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d79418f07e5a942901b1c11ff77502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closefella: {fileID: 284199912}
+  stringtime: 1
   text: {fileID: 2013548585}
   revive: {fileID: 284199915}
   GOS: {fileID: 2010379962}

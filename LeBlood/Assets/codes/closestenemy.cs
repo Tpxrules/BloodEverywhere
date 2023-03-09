@@ -28,6 +28,11 @@ public class closestenemy : MonoBehaviour
 		  }
 		Debug.DrawLine (this.transform.position, closestEnemy.transform.position);
 	}
+	public void hurtclose(float x){
+			FindClosestEnemy ();
+			closestEnemy.electric();
+			closestEnemy.TakeDamamge(x , 0);
+	}
 	void Update () {
 	
 
@@ -41,18 +46,6 @@ public class closestenemy : MonoBehaviour
 			}
 			
          }
-
-/*
-		// Finds the rotation of said enemy...
-
-
-        Vector3 difference = closestEnemy.transform.position - transform.position;
-
-        difference.Normalize();
-
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-
-*/
 	}
 
 }

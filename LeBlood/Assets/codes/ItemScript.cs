@@ -79,7 +79,11 @@ public class ItemScript : MonoBehaviour
 
                     break;
                        case 13:
-                    staticinfo.stringu = true;
+                    staticinfo.stringu += 0.5f;
+
+                    break;
+                     case 14:
+                    staticinfo.thorns += 0.5f;
 
                     break;
 

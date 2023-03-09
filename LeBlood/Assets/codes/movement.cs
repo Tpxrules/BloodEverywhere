@@ -6,6 +6,7 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {  
+  public closestenemy closefella;
   public float stringtime  = 1f;
   [SerializeField] public TextMeshProUGUI text;
   public AudioSource revive;
@@ -109,6 +110,8 @@ public IEnumerator Iframez(){
 */
  public void TakeDamage(float damage)
 {       
+        if(damage > 1)
+        closefella.hurtclose(staticinfo.thorns);
        // StartCoroutine(Iframez());
         damagesound.Play();
         currentHealth -= damage;
@@ -306,9 +309,9 @@ public IEnumerator Iframez(){
         }
         animator.SetFloat("HS", horizontal);
         animator.SetFloat("VS" , vertical);
-        if(stringtime >= 1)
+        if(stringtime > staticinfo.stringu)
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         else
-           body.velocity = new Vector2(horizontal * runSpeed*2, vertical * runSpeed);
+           body.velocity = new Vector2(horizontal * runSpeed*2.5f, vertical * runSpeed);
     }
 }

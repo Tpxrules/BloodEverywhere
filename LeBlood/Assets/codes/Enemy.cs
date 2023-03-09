@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         }
         if(health<=0){
                 //spawning le funny blood
-                if(staticinfo.stringu == true)
+                if(staticinfo.stringu > 0)
                  zaplaya.stringtime = 0f;
                 int number;
                 number =Random.Range(1,6);
