@@ -17,4 +17,5 @@ public static class staticinfo
     static public int DIO = 0;
     static public float stringu = 0;
     static public float thorns = 0;
+    static public int HS = 0;
 }
