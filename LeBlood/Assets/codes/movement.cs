@@ -7,7 +7,7 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {  
-
+public vignettestuff VGSET;
   public closestenemy closefella;
   public float stringtime  = 1f;
   [SerializeField] public TextMeshProUGUI text;
@@ -70,7 +70,7 @@ public void ZAWARLDO(){
        
     }
 public void updatehealth(){
-   
+   VGSET.updatevignette(maxHealth , currentHealth);
   int no = (int)currentHealth;
 healthBar.SetHealth(no);
 }

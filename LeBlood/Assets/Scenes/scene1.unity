@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 284199914}
   - component: {fileID: 284199915}
   - component: {fileID: 284199916}
+  - component: {fileID: 284199917}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -367,6 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d79418f07e5a942901b1c11ff77502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VGSET: {fileID: 284199917}
   closefella: {fileID: 284199912}
   stringtime: 1
   text: {fileID: 2013548585}
@@ -893,6 +895,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &284199917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284199900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a21f89330d88ac4180de9b48bae1be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ps: {fileID: 519420034}
+  test: 0
+  test2: 0
 --- !u!1 &296725207
 GameObject:
   m_ObjectHideFlags: 0
