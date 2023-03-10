@@ -101,13 +101,13 @@ return Random.Range(0,100) ;
                 staminabackdrop.SetMaxHealth(12); 
                 staminabackdrop.SetHealth(5);
     }
-/*
+
 public IEnumerator Iframez(){
-    gameObject.GetComponent<Collider2D>().enabled=false; 
-         yield return new WaitForSeconds(0.4f);
-    gameObject.GetComponent<Collider2D>().enabled=true; 
+    isInvincible = true; 
+         yield return new WaitForSeconds(0.2f);
+    isInvincible = false; ; 
 }
-*/
+
  public void TakeDamage(float damage)
 {       
         if(damage > 1)
@@ -128,6 +128,7 @@ public IEnumerator Iframez(){
             return;
         }
         }
+        Iframez();
 
 }
  public void TakeSelfDamage(float damage)
