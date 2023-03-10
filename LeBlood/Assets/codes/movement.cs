@@ -24,6 +24,7 @@ public vignettestuff VGSET;
     float vertical;
     public bool isInvincible = false;
     float moveLimiter = 0.7f;
+      SpriteRenderer sprite;
     private movement stats;
     public float runSpeed = 20.0f;
         public int maxHealth = 100; // maximum health of the player
@@ -50,7 +51,8 @@ public vignettestuff VGSET;
         private float lastdashed;
 private float stuntime = 0.5f;
 private float timestunned = 2;
-
+ Color white = new Color (1, 1, 1, 1); 
+  Color transperant = new Color (1, 1, 1, 0.4f); 
 
 
 //_vg.intensity
@@ -99,7 +101,7 @@ return Random.Range(0,100) ;
     void Start()
     {
 
-       
+        sprite = GetComponent<SpriteRenderer>();
         stats = GetComponent<movement>();
         gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
@@ -137,7 +139,8 @@ public IEnumerator Iframez(){
             Die();
             return;
         }
-          Iframez();
+        StartCoroutine(Iframez());
+        
         }
       
 
@@ -197,7 +200,10 @@ public IEnumerator Iframez(){
     }
     void Update()
     {
-      
+ 
+
+
+
       if(stringtime < 1){
         stringtime+= Time.deltaTime;
       }
@@ -286,6 +292,10 @@ public IEnumerator Iframez(){
 
     void FixedUpdate()
     {
+           if(isInvincible)
+                sprite.color = transperant;
+           else
+                sprite.color = white;
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
         {
             // limit movement speed diagonally, so you move at 70% speed
@@ -299,4 +309,5 @@ public IEnumerator Iframez(){
         else
            body.velocity = new Vector2(horizontal * runSpeed*2.5f, vertical * runSpeed);
     }
+    
 }
