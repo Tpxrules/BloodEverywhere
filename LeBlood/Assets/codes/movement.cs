@@ -110,9 +110,10 @@ public IEnumerator Iframez(){
 
  public void TakeDamage(float damage)
 {       
+      
+        if(!isInvincible){
         if(damage > 1)
         closefella.hurtclose(staticinfo.thorns);
-        if(!isInvincible){
        // StartCoroutine(Iframez());
         damagesound.Play();
         currentHealth -= damage;
@@ -127,8 +128,9 @@ public IEnumerator Iframez(){
             Die();
             return;
         }
+          Iframez();
         }
-        Iframez();
+      
 
 }
  public void TakeSelfDamage(float damage)
@@ -150,13 +152,7 @@ public IEnumerator Iframez(){
 
   void Shoot()
     {
-      
-
-      switch(attacktype){
-          case 1:
-
-
-               GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
+        GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
          Bullet c = bullet.GetComponent<Bullet>();
@@ -174,39 +170,19 @@ public IEnumerator Iframez(){
         TakeSelfDamage(staticinfo.basedamage);
 
 
-
-          break;
-          case 2:
-             GameObject fastbullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
-        Rigidbody2D a = fastbullet.GetComponent<Rigidbody2D>();
-        a.AddForce(pls.up * bulletForce *2);
-         
-        Bullet b = fastbullet.GetComponent<Bullet>();
-            b.leset(3, staticinfo.penetration , staticinfo.bounceamount);
-
-
-          TakeSelfDamage(2);
-          break;
-          default:
-          attacktype = 1;
-          break;
-
-
-
-      }
+    }
+      
+      
 
       
-    }
+    
     private void Die()
     {
         // do death related actions here, such as calling a game over screen
        GOS.Setup(monee);
-    //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
-    
-      //  Destroy(gameObject);
     }
     public void moneeGain(){
-               monee++;
+              monee++;
               string s =  monee.ToString();
               text.text =  s ;
     }
@@ -261,9 +237,6 @@ public IEnumerator Iframez(){
         horizontal = 0;
         vertical = 0;
       }
-
-
-
         if (held ==true && currentHealth > staticinfo.basedamage && lastshot > staticinfo.shootingrate)
         {
             lastshot = 0;
