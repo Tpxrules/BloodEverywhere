@@ -7,7 +7,7 @@ public class abilities : MonoBehaviour
 
     public Image slides;
     float time;
-     public Transform pls;
+      Transform pls;
      public float bulletForce  = 2;
 
      public float full = 20;
@@ -15,7 +15,7 @@ public class abilities : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         pls = GameObject.FindGameObjectWithTag("Hand").GetComponent<Transform>();
     }
     void Shoot()
     {

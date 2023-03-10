@@ -50,7 +50,7 @@ public class PowerUp : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
-        healthManager.DecreaseHealth(stats);
+      //  healthManager.DecreaseHealth(stats);
         Destroy(gameObject);
     }
 }

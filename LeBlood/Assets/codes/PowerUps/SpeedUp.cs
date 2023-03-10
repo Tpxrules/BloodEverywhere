@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class SpeedUp : MonoBehaviour
 {
-    public float duration = 4f;
+    public float duration = 3f;
     public float speedMultiplier = 2f;
     private movement stats;
     private float originalSpeed;
 
     private void Start()
     {
-        stats = GetComponent<movement>();
+        stats = GameObject.FindGameObjectWithTag("Player").GetComponent<movement>();
         originalSpeed = stats.runSpeed;
     }
 
