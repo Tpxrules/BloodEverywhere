@@ -125,7 +125,7 @@ MonoBehaviour:
   isInvincible: {fileID: 0}
   maaag: 0
   magneeto: {fileID: 0}
-  text: 4s Speed
+  text: 3s Speed
 --- !u!1 &8332000609561481148
 GameObject:
   m_ObjectHideFlags: 0

@@ -112,6 +112,7 @@ public IEnumerator Iframez(){
 {       
         if(damage > 1)
         closefella.hurtclose(staticinfo.thorns);
+        if(!isInvincible){
        // StartCoroutine(Iframez());
         damagesound.Play();
         currentHealth -= damage;
@@ -125,6 +126,7 @@ public IEnumerator Iframez(){
           }else
             Die();
             return;
+        }
         }
 
 }

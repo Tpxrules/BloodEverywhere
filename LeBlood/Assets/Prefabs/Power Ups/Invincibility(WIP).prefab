@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef3674766b04414383e20ff241c990d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 4
+  duration: 3
 --- !u!1 &1140307352348454132
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,4 +170,4 @@ MonoBehaviour:
   isInvincible: {fileID: 1140307351883858885}
   maaag: 0
   magneeto: {fileID: 0}
-  text: 4s Invincibility
+  text: 3s Invincibility
