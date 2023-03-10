@@ -25,7 +25,7 @@ public class lettherebeenemies : MonoBehaviour
   }
     // Update is called once per frame
   void Update()
-  {  
+  {  if( staticinfo.spawning){
     timesincelastspawn += Time.deltaTime;
     if (timesincelastspawn >= spawntime && OnButton )
     { 
@@ -33,7 +33,7 @@ public class lettherebeenemies : MonoBehaviour
        for(int i = 0 ; i < asa ; i++)
       Instantiate(c[Random.Range(0,size)], new Vector2(Random.Range(-range,range),Random.Range(-range,range)), Quaternion.identity);
         
-               
+    }        
     }          
   }      
 }

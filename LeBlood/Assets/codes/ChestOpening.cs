@@ -11,6 +11,7 @@ public class ChestOpening : MonoBehaviour
         float timmy;
          Color white = new Color (1, 1, 1, 1); 
          Color minus = new Color (0, 0, 0, 0.1f); 
+         public bool it = false;
     //    public ParticleSystem particles;
        
     // Start is called before the first frame update
@@ -37,6 +38,11 @@ public class ChestOpening : MonoBehaviour
         Destroy(gameObject);
     }
     public void open(){
+      if(it){
+            staticinfo.spawning = true;
+            staticinfo.startTime = Time.time;
+      }
+    
        GameObject Item = Instantiate(items[Random.Range(0,size)], transform.position, transform.rotation);
           gameObject.GetComponent<Collider2D>().enabled = false;
          gameObject.GetComponent<ParticleSystem>().Play(); 

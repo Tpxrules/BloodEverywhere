@@ -8,21 +8,20 @@ public class Timercode : MonoBehaviour
 
    [SerializeField] public TextMeshProUGUI text;
 
-    private float startTime;
+
+      public bool on = false;
+  
     public lettherebeenemies boo;
       private float timesincebump;
     // Start is called before the first frame update
-    void Start()
-    {
-       startTime = Time.time;
-    }
+  
 
     // Update is called once per frame
     void Update()
     {
 
-        
-        float t = Time.time - startTime;
+        if(staticinfo.spawning == true){
+        float t = Time.time - staticinfo.startTime;
          float d = Time.time - timesincebump;
          if(d > 30){
             timesincebump = Time.time;
@@ -36,6 +35,6 @@ public class Timercode : MonoBehaviour
         else
         text.text = minute + ":" + seconds ;
 
-        
+        }
     }
 }
