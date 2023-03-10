@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using TMPro;
 
 
 public class movement : MonoBehaviour
 {  
+
   public closestenemy closefella;
   public float stringtime  = 1f;
   [SerializeField] public TextMeshProUGUI text;
@@ -49,6 +51,10 @@ public class movement : MonoBehaviour
 private float stuntime = 0.5f;
 private float timestunned = 2;
 
+
+
+//_vg.intensity
+
 public void ZAWARLDO(){
   currentHealth = maxHealth;
   revive.Play();
@@ -64,6 +70,7 @@ public void ZAWARLDO(){
        
     }
 public void updatehealth(){
+   
   int no = (int)currentHealth;
 healthBar.SetHealth(no);
 }
@@ -83,6 +90,7 @@ return Random.Range(0,100) ;
     }
      void melee()
     {
+       
          GameObject melee = Instantiate(meleePrefab, pls.position, pls.rotation);
            currentHealth = maxHealth;
              updatehealth();
@@ -91,6 +99,7 @@ return Random.Range(0,100) ;
     void Start()
     {
 
+       
         stats = GetComponent<movement>();
         gameObject.GetComponent<TrailRenderer>().enabled=false; 
         body = GetComponent<Rigidbody2D>();
@@ -110,7 +119,7 @@ public IEnumerator Iframez(){
 
  public void TakeDamage(float damage)
 {       
-      
+     
         if(!isInvincible){
         if(damage > 1)
         closefella.hurtclose(staticinfo.thorns);
