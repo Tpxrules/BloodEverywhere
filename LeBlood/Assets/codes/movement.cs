@@ -164,6 +164,7 @@ public IEnumerator Iframez(){
 
   void Shoot()
     {
+      if(!PauseMenu.isPaused){
         GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
@@ -180,7 +181,7 @@ public IEnumerator Iframez(){
         }
         if(chance() >= staticinfo.FreeAmmoChance)
         TakeSelfDamage(staticinfo.basedamage);
-
+      }
 
     }
       
