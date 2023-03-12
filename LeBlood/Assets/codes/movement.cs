@@ -49,7 +49,7 @@ public vignettestuff VGSET;
         public int chanceOfantom = 0;
         private float dashdelay = 3;
         private float lastdashed;
-private float stuntime = 1.2f;
+private float stuntime = 1.0f;
 private float timestunned = 4;
  Color white = new Color (1, 1, 1, 1); 
   Color transperant = new Color (1, 1, 1, 0.4f); 
@@ -217,7 +217,7 @@ public IEnumerator Iframez(){
         {
           dash = false;
           
-           GameObject Sigil = Instantiate(bloop, transform.position, transform.rotation);
+        //   GameObject Sigil = Instantiate(bloop, transform.position, transform.rotation);
            gameObject.GetComponent<TrailRenderer>().enabled=false; 
            gameObject.GetComponent<Collider2D>().enabled=true; 
         }
@@ -280,10 +280,10 @@ public IEnumerator Iframez(){
           dashing.Play();
           timer = 0;
           dash = true;
-             GameObject melee = Instantiate(meleePrefab, transform.position ,pls.rotation);
+           //  GameObject melee = Instantiate(meleePrefab, transform.position ,pls.rotation);
              gameObject.GetComponent<TrailRenderer>().enabled=true; 
             gameObject.GetComponent<Collider2D>().enabled=false; 
-             TakeDamage(2);
+          //   TakeDamage(2);
              currentstamina = currentstamina - 4;
               stamina.SetHealth(currentstamina);
                body.velocity=new Vector2(0,0);
