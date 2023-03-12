@@ -49,8 +49,8 @@ public vignettestuff VGSET;
         public int chanceOfantom = 0;
         private float dashdelay = 3;
         private float lastdashed;
-private float stuntime = 0.5f;
-private float timestunned = 2;
+private float stuntime = 1.2f;
+private float timestunned = 4;
  Color white = new Color (1, 1, 1, 1); 
   Color transperant = new Color (1, 1, 1, 0.4f); 
 
@@ -125,7 +125,7 @@ public IEnumerator Iframez(){
         if(!isInvincible){
         if(damage > 1)
         closefella.hurtclose(staticinfo.thorns);
-       // StartCoroutine(Iframez());
+      
         damagesound.Play();
         currentHealth -= damage;
         updatehealth();
@@ -139,7 +139,7 @@ public IEnumerator Iframez(){
             Die();
             return;
         }
-        StartCoroutine(Iframez());
+     //   StartCoroutine(Iframez());
         
         }
       
