@@ -5087,7 +5087,7 @@ MonoBehaviour:
     m_DissipationRate: 0.25
     m_RawSignal: {fileID: 11400000, guid: 90a11b0bd26895e4ab6d8538b8d1e699, type: 2}
     m_AmplitudeGain: 3
-    m_FrequencyGain: 2
+    m_FrequencyGain: 1
     m_RepeatMode: 0
     m_Randomize: 1
     m_TimeEnvelope:
@@ -5102,18 +5102,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: 1
+          inSlope: 2
+          outSlope: 2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 2
-          outSlope: 2
+          value: 0
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
