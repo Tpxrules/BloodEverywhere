@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class explosionscript : MonoBehaviour
 {
+  private CinemachineImpulseSource _shake;
     private GameObject player;
     float time;
     // Start is called before the first frame update
     void Start()
     {
+       _shake = GetComponent<CinemachineImpulseSource>();
           player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -17,6 +19,7 @@ public class explosionscript : MonoBehaviour
     {
         time+= Time.deltaTime;
         if(time > 0.4f){
+         _shake.GenerateImpulse();
             Destroy(gameObject);
         }
         
