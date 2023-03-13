@@ -86,7 +86,9 @@ public class ItemScript : MonoBehaviour
                     staticinfo.thorns += 0.5f;
 
                     break;
-
+                    case 15:
+                      staticinfo.Shotgun = true;
+                      break;
 
                   }
 

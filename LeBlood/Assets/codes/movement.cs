@@ -165,6 +165,16 @@ public IEnumerator Iframez(){
   void Shoot()
     {
       if(!PauseMenu.isPaused){
+
+          if (staticinfo.Shotgun == true){
+    for (int i = 0; i < 3; i++)
+    {
+        float angle = i * 20f - 20f;
+        Quaternion rotation = Quaternion.Euler(0f, 0f, angle) * pls.transform.rotation;
+        GameObject doov = Instantiate(BulletPrefab, pls.position, rotation);
+        doov.GetComponent<Rigidbody2D>().AddForce(doov.transform.up*500f);
+    }
+   }else{
         GameObject bullet = Instantiate(BulletPrefab, pls.position, pls.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(pls.up * bulletForce );
@@ -172,6 +182,7 @@ public IEnumerator Iframez(){
         if(chance()  < chanceOfantom){
             c.fanta = true;
         }
+      
          
         if(chance()  < staticinfo.critchance){
 
@@ -182,7 +193,7 @@ public IEnumerator Iframez(){
         if(chance() >= staticinfo.FreeAmmoChance)
         TakeSelfDamage(staticinfo.basedamage);
       }
-
+      }
     }
       
       
