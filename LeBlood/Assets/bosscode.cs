@@ -6,7 +6,7 @@ public class bosscode : MonoBehaviour
 {
 
     float timesincelastattack;
-    
+    float timemoving;
     private Transform target;
     private movement zaplaya;
         private float distance;
@@ -49,9 +49,22 @@ public class bosscode : MonoBehaviour
       
          distance = Vector2.Distance(transform.position,target.transform.position);
         Vector2 direction = target.transform.position - transform.position;
-             if(distance>range)
-                     transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
+             if(distance>range){
+                 timemoving += Time.deltaTime;
+                 if(timemoving    <    3 )
+                    transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
+                    else{
+                           
+                            while(timemoving >0.1){
+                                timemoving -= Time.deltaTime;
+                            }
+                        //get tired
+                        //play tired animation
+                    }
+             }
+                    
                      else{ 
+                        timemoving= 0;
                           timesincelastattack += Time.deltaTime;
                         if(timesincelastattack > attackfreq){
                             timesincelastattack = 0;
